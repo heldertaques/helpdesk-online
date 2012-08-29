@@ -19,4 +19,14 @@
     <servlet-name>ServletLogin</servlet-name>
     <url-pattern>/ServletLogin</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletCadastro</display-name>
+    <servlet-name>ServletCadastro</servlet-name>
+    <servlet-class>usuario.ServletCadastro</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletCadastro</servlet-name>
+    <url-pattern>/ServletCadastro</url-pattern>
+  </servlet-mapping>
 </web-app>
