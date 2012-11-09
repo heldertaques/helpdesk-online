@@ -5,7 +5,7 @@ public class Usuario {
 	private String loginName;
 	private String senha;
 	private int privilegio;
-	private boolean status;
+	private int status;
 	
 	public String getNome() {
 		return nome;
@@ -31,10 +31,10 @@ public class Usuario {
 	public void setPrivilegio(int privilegio) {
 		this.privilegio = privilegio;
 	}
-	public boolean getStatus() {
+	public int getStatus() {
 		return status;
 	}
-	public void setStatus(boolean status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 }

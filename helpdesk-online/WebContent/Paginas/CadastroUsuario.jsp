@@ -7,6 +7,11 @@
 <title>Cadastro de Usuarios</title>
 </head>
 <body>
+<script>
+	function cancelarCadastro(){
+		location.href = "Principal.jsp";
+	}
+</script>
 <table width="50%">
 <tbody>
 <tr>
@@ -15,10 +20,11 @@
 </tr>
 </tbody>
 </table>
+<form action="../CadastroUsuario" method="post">
 <table border="2">
 <tr>
 <td bordercolor="transparent">Nome:<br><input type="text" name="nome" id="nome" size="30"></td>
-<td bordercolor="transparent">Login:<br><input type="text" name="login" id="login"></td>
+<td bordercolor="transparent">Login:<br><input type="text" name="loginName" id="loginName"></td>
 </tr>
 <tr>
 <td bordercolor="transparent">Senha:<br><input type="password" name="senha" id="senha"></td>
@@ -30,10 +36,20 @@
 </td>
 <td bordercolor="transparent">Privilégio<br>
 <select name="privilegio" id="privilegio">
-	<option value="0">Administrador</option>
-	<option value="1">Operador</option>
-	<option value="2">Usuário</option>
+	<option value="1">Administrador</option>
+	<option value="2">Operador</option>
+	<option value="3">Usuário</option>
 </select>
-</table>
+</td>
+</tr>
+</table><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" value="Cadastrar">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="Button" value="Cancelar" onclick="cancelarCadastro()">
+</form>
+
 </body>
 </html>
