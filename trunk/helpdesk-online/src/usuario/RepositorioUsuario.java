@@ -14,7 +14,7 @@ public class RepositorioUsuario implements InterfaceUsuario{
 		pstmt.setString(2, usuario.getNome());
 		pstmt.setString(3, usuario.getSenha());
 		pstmt.setInt(4, usuario.getPrivilegio());
-		pstmt.setBoolean(5, usuario.getStatus());
+		pstmt.setInt(5, usuario.getStatus());
 		
 		pstmt.executeUpdate();
 	}

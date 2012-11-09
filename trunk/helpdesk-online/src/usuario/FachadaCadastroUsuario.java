@@ -13,9 +13,15 @@ public class FachadaCadastroUsuario {
 		u.setLoginName(loginName);
 		u.setSenha(senha);
 		u.setPrivilegio(Integer.parseInt(privilegio));
-		u.setStatus(Boolean.parseBoolean(status));
+		u.setStatus(Integer.parseInt(status));
 		
 		cadastroUsuario.inserirUsuario(u);
+	}
+	
+	public Usuario pesquisarUsuario(String nome)
+	{
+		Usuario u = new Usuario();
+		return u;
 	}
 	
 
