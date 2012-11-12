@@ -2,7 +2,10 @@ package usuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import conexao.Conexao;
 
 public class RepositorioUsuario implements InterfaceUsuario{
 
@@ -19,4 +22,20 @@ public class RepositorioUsuario implements InterfaceUsuario{
 		pstmt.executeUpdate();
 	}
 
+	public Usuario pesquisarPorLogin(String login, String senha) throws ClassNotFoundException, SQLException
+	{
+		Usuario u = new Usuario();
+		Connection con = Conexao.conectarBanco();
+		PreparedStatement pstmt = con.prepareStatement("select * from usuarios where ulogin = ? and usenha = md5(?)");
+		pstmt.setString(1, login);
+		pstmt.setString(2, senha);
+
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()){
+			u.setLoginName(rs.getString("ulogin"));
+			u.setSenha(rs.getString("usenha"));
+			u.setPrivilegio(rs.getInt("uprivilegio"));
+			u.setStatus(rs.getInt("ustatus"));
+		}
+		return u;	}
 }

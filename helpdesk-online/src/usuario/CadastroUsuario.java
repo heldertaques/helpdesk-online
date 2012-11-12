@@ -7,8 +7,10 @@ public class CadastroUsuario {
 	public void inserirUsuario(Usuario usuario) throws ClassNotFoundException, SQLException{
 		repositorioUsuario.inserirUsuario(usuario);
 	}
-	public Usuario pesquisarPorNome(Usuario usuario)
+	public Usuario pesquisarPorLogin(String login, String senha) throws ClassNotFoundException, SQLException
 	{
-		return usuario;
+		Usuario u = new Usuario();
+		u = repositorioUsuario.pesquisarPorLogin(login, senha);
+		return u;
 	}
 }

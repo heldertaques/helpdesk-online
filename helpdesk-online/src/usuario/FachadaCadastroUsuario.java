@@ -18,9 +18,11 @@ public class FachadaCadastroUsuario {
 		cadastroUsuario.inserirUsuario(u);
 	}
 	
-	public Usuario pesquisarUsuario(String nome)
+	public Usuario pesquisarPorLogin(String login, String senha) throws ClassNotFoundException, SQLException
 	{
 		Usuario u = new Usuario();
+		CadastroUsuario c = new CadastroUsuario();
+		u = c.pesquisarPorLogin(login,senha);
 		return u;
 	}
 	

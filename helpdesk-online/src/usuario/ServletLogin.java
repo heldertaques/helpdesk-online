@@ -1,37 +1,44 @@
 package usuario;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ServletLogin
- */
 public class ServletLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public ServletLogin() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	@SuppressWarnings("static-access")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Conexao con = new Conexao();
+		FachadaCadastroUsuario fc = new FachadaCadastroUsuario();
+		Usuario u = new Usuario();
+		try {
+			u = fc.pesquisarPorLogin(request.getParameter("user"),request.getParameter("pass"));
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		String senha = request.getParameter("pass");
+		
+		TestaSenhaMd5 md5 = new TestaSenhaMd5();
+		String senhaMd5 = md5.md5(senha); 
+		
+		if(senhaMd5.equals(u.getSenha())) {
+			System.out.println("Senha válida");
+			response.sendRedirect("Principal.jsp");
+		}
 		
 	}
 
