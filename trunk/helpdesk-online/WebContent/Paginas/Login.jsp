@@ -20,19 +20,23 @@
 	}
 </script>
 <body>
+<center>
 <table width="50%">
 <tr>
 <td>
-<img alt="" src="../imagens/help.jpg">
+<img alt="" src="imagens/help.jpg">
 </td>
 </tr>
 </table>
-<form action="../ServletLogin" method="post" onsubmit="return ValidaLogin();">
+</center>
+<center>
+<br><br><br><br><br><br><br><br><br>
+<form action="ServletLogin" method="post" onsubmit="return ValidaLogin();">
 Usuário:&nbsp;<input type="text" name="user" id="user"><br><br>
 Senha:&nbsp;&nbsp;<input type="password" name="pass" id="pass"><br><br>
 &nbsp;&nbsp;&nbsp;<input type="submit" name="logar" id="logar" value="Logar">&nbsp;&nbsp; 
 
 </form>
-
+</center>
 </body>
 </html>
