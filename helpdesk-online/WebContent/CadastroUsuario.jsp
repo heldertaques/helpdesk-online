@@ -20,7 +20,7 @@
 </tr>
 </tbody>
 </table>
-<form action="../CadastroUsuario" method="post">
+<form action="CadastroUsuario" method="post">
 <table border="2">
 <tr>
 <td bordercolor="transparent">Nome:<br><input type="text" name="nome" id="nome" size="30"></td>
