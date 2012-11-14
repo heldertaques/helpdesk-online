@@ -1,9 +1,8 @@
 package funcionarios;
 
-import java.awt.List;
 import java.util.Collection;
 
-import exception.Matricula_não_encontrada;
+import exception.Matricula_nao_encontrada;
 import exception.Matricula_vazia;
 import exception.Nome_Vazio;
 
@@ -25,12 +24,13 @@ public class Cadastro_Func {
 		}
 	}
 	
-	public Funcionario pesquisar(String matricula) throws Matricula_não_encontrada{
+	@SuppressWarnings("null")
+	public Funcionario pesquisar(String matricula) throws Matricula_nao_encontrada{
 		
 		Funcionario func = null;
 		
 		if(func.getMatricula().equals("")){
-			throw new Matricula_não_encontrada();
+			throw new Matricula_nao_encontrada();
 			
 		}else {
 			func = I.pesquisar(matricula); 
@@ -39,12 +39,12 @@ public class Cadastro_Func {
 		
 	}
 
-	public void excluir(String matricula) throws Matricula_não_encontrada{
+	public void excluir(String matricula) throws Matricula_nao_encontrada{
 		
 		if(matricula.trim().equals("")){
-			throw new Matricula_não_encontrada();
+			throw new Matricula_nao_encontrada();
 		}else if (pesquisar(matricula) == null){
-			throw new Matricula_não_encontrada();
+			throw new Matricula_nao_encontrada();
 		}else{
 			I.excluir(matricula);
 		}

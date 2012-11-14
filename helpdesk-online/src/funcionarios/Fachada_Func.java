@@ -2,7 +2,7 @@ package funcionarios;
 
 import java.util.Collection;
 
-import exception.Matricula_não_encontrada;
+import exception.Matricula_nao_encontrada;
 import exception.Matricula_vazia;
 import exception.Nome_Vazio;
 
@@ -25,13 +25,13 @@ public class Fachada_Func {
 	}
 	
 	
-	public Funcionario pesquisar(String matricula) throws Matricula_não_encontrada{
+	public Funcionario pesquisar(String matricula) throws Matricula_nao_encontrada{
 		
 		return c.pesquisar(matricula);
 		
 	}
 	
-	public void excluir(String matricula) throws Matricula_não_encontrada{
+	public void excluir(String matricula) throws Matricula_nao_encontrada{
 		c.excluir(matricula);
 	}
 	

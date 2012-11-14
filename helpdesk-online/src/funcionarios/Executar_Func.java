@@ -1,7 +1,5 @@
 package funcionarios;
 
-import javax.swing.JOptionPane;
-
 public class Executar_Func {
 
 	
