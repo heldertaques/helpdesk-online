@@ -20,7 +20,6 @@
     <servlet-name>ServletLogin</servlet-name>
     <url-pattern>/ServletLogin</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>Cadastro de Usuario</display-name>
@@ -31,7 +30,6 @@
     <servlet-name>CadastroUsuario</servlet-name>
     <url-pattern>/CadastroUsuario</url-pattern>
   </servlet-mapping>
-
   <servlet>
     <description></description>
     <display-name>Cadastro funcionario</display-name>
@@ -41,5 +39,15 @@
   <servlet-mapping>
     <servlet-name>CadastroFunc</servlet-name>
     <url-pattern>/CadastroFunc</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletPesquisarTodosFuncionarios</display-name>
+    <servlet-name>ServletPesquisarTodosFuncionarios</servlet-name>
+    <servlet-class>funcionarios.ServletPesquisarTodosFuncionarios</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletPesquisarTodosFuncionarios</servlet-name>
+    <url-pattern>/ServletPesquisarTodosFuncionarios</url-pattern>
   </servlet-mapping>
 </web-app>
