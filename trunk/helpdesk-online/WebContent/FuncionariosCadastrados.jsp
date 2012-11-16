@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Help Desk - Online</title>
+<title>Lista de Funcionarios Cadastrados</title>
 <link href="menu_assets/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -21,7 +21,7 @@
    <li class='has-sub '><a href='#'><span>Administração</span></a>
       <ul>
          <li><a href='TelaCadastro.jsp'><span>Cadastrar Funcionarios</span></a></li>
-         <li><a href='FuncionariosCadastrados.jsp'><span>Cadastrar Usuário</span></a></li>
+         <li><a href='CadastroUsuario.jsp'><span>Cadastrar Usuário</span></a></li>
          <li><a href='#'><span>Alterar Funcionario</span></a></li>
          <li><a href='#'><span>Alterar Usuário</span></a></li>
       </ul>
@@ -35,4 +35,12 @@
 </ul>
 </div>
 </body>
+<form action="">
+<table border="1">
+	<tr>
+	<td bordercolor="transparent">Matricula</td>
+	<td bordercolor="transparent" width="300">Nome</td>
+	</tr>
+</table>
+</form>
 </html>

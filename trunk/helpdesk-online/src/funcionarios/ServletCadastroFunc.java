@@ -36,7 +36,7 @@ public class ServletCadastroFunc extends HttpServlet {
 	
 		Fachada_Func fachada = new Fachada_Func();
 		try {
-			fachada.inserir( request.getParameter("matricula"),request.getParameter("nome"),request.getParameter("telefone"),
+			fachada.inserir(request.getParameter("nome"),request.getParameter("telefone"),
 					         request.getParameter("endereco"), request.getParameter("funcao"),request.getParameter("sexo"),
 					         request.getParameter("cpf"),request.getParameter("email"),request.getParameter("cidade"),
 					         request.getParameter("bairro"));

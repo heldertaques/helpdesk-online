@@ -12,11 +12,11 @@ public class Fachada_Func {
 
 	private Cadastro_Func c = new Cadastro_Func();
 	
-	public void inserir(String matricula,String nome,String telefone, String endereco,String funcao,String sexo, String cpf,String email,String cidade,String bairro) throws Nome_Vazio, Matricula_vazia, ClassNotFoundException, SQLException{
+	public void inserir(String nome,String telefone, String endereco,String funcao,String sexo, String cpf,String email,String cidade,String bairro) throws Nome_Vazio, Matricula_vazia, ClassNotFoundException, SQLException{
 		
 		Funcionario func = new Funcionario();
 		
-		func.setMatricula(matricula);
+		//func.setMatricula(matricula);
 		func.setNome(nome);
 		func.setTelefone(telefone);
 		func.setEndereco(endereco);

@@ -19,9 +19,9 @@ public class Cadastro_Func {
 	
 	public void inserir(Funcionario func) throws Nome_Vazio, Matricula_vazia, ClassNotFoundException, SQLException{
 		
-		if(func.getMatricula().trim().equals("")){
-			 throw new Matricula_vazia();
-		}else if (func.getNome().trim().equals("")){
+		/*if(func.getMatricula().trim().equals("")){
+			 throw new Matricula_vazia();*/
+		if (func.getNome().trim().equals("")){
 			throw new Nome_Vazio();
 	//	}else if
 	  //         (pesquisar(func.getMatricula()) == null){
