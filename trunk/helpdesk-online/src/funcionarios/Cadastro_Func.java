@@ -57,8 +57,6 @@ public class Cadastro_Func {
 
 	public void excluir(String matricula) throws Matricula_nao_encontrada, Funcionario_nao_cadastrado, ClassNotFoundException, SQLException {
 
-
-
 		
 		if(matricula.trim().equals("")){
 
@@ -66,14 +64,10 @@ public class Cadastro_Func {
 			throw new Matricula_nao_encontrada();
 			
 
-
-
 		}else if (pesquisar(matricula) == null){
 
 			
 			throw new Matricula_nao_encontrada();
-
-
 
 		}else{
 			I.excluir(matricula);

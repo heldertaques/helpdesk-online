@@ -17,7 +17,7 @@ public class Executar_Func {
 	System.out.println(Repositorio_Func.lista.size());
 	
 	} catch (Exception e) {
-		System.out.println(e.getMessage());	
+		System.out.println(e.getMessage());
 		
 	}	
 
