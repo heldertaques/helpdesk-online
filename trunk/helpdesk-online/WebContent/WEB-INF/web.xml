@@ -20,6 +20,7 @@
     <servlet-name>ServletLogin</servlet-name>
     <url-pattern>/ServletLogin</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>Cadastro de Usuario</display-name>
@@ -29,5 +30,16 @@
   <servlet-mapping>
     <servlet-name>CadastroUsuario</servlet-name>
     <url-pattern>/CadastroUsuario</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>Cadastro funcionario</display-name>
+    <servlet-name>CadastroFunc</servlet-name>
+    <servlet-class>funcionarios.ServletCadastroFunc</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CadastroFunc</servlet-name>
+    <url-pattern>/CadastroFunc</url-pattern>
   </servlet-mapping>
 </web-app>
