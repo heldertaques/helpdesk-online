@@ -49,7 +49,7 @@ public class Repositorio_Banco implements Irepositorio {
 			func.setNome(rs.getString("nome"));
 			func.setTelefone(rs.getString("telefone"));
 			func.setEndereco(rs.getString("endereco"));
-			func.setFuncao(rs.getString("funcao"));
+			func.setFuncao(rs.getString("cd_cargo"));
 			func.setSexo(rs.getString("sexo"));
 			func.setCpf(rs.getString("cpf"));
 			func.setEmail(rs.getString("email"));
