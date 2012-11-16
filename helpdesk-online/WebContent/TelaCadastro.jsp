@@ -7,24 +7,28 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="CadastroCliente"method="post">
- <div align="center">
- <h1>CADASTRO DE FUNCIONÁRIO</h1><br><br>   
-</div>
-NOME:<input type = "text" name = "nome" size="60">
-SEXO:<input type = "radio" name="sexo" value="Masculino" >Masculino<input type="radio" name="sexo" value="Feminino"> Feminino <br><br>
-CPF:<input type = "text" name = "cpf"size="40"><br><br>
-EMAIL:<input type = "text" name = "email"size="60"><br><br>
-TELEFONE:<input type = "text" name = "telefone"><br><br>
-CEP:<input type = "text" name = "cep"><br><br>
-ENDEREÇO:<input type = "text" name = "endereco"size="60"><br><br>
-CIDADE:<input type = "text" name = "cidade">
-BAIRRO:<input type="text" name = "bairro"><br><br>
+<form action="CadastroFunc"method="post">
 <div align="center">
+
+ <h1>CADASTRO DE FUNCIONÁRIO</h1><br><br>   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOME:<input type "text" name = "nome" size="60">
+SEXO:<input type="radio" name="sexo" value="Masculino" >Masculino<input type="radio" name="sexo" value="Feminino"> Feminino <br><br>
+CARGO:<select name="cargo">
+<option value="1"></option>
+<option value="2">analista TI</option>
+<option value="3">Administrador de redes</option>
+<option value="4">Tecnico em manutenção</option>
+</select>
+CPF:<input type "text" name = "cpf"size="40"><br><br>
+EMAIL:<input type "text" name = "email"size="60"><br><br>
+TELEFONE:<input type "text" name = "telefone"><br><br>
+ENDEREÇO:<input type "text" name = "endereco"size="60"><br><br>
+CIDADE:<input type "text" name = "cidade"size="30">
+BAIRRO:<input type "text" name = "bairro"><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="submit" value="Enviar Cadastro"> 
 <input type="reset" value="Cancelar" >
-</div>
-    
 </form>
 
 </body>
