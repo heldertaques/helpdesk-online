@@ -35,12 +35,13 @@
 </ul>
 </div>
 </body>
-<form action="">
+<form action="ServletPesquisarTodosFuncionarios" method="post">
 <table border="1">
 	<tr>
 	<td bordercolor="transparent">Matricula</td>
 	<td bordercolor="transparent" width="300">Nome</td>
 	</tr>
-</table>
+</table><br><br>
+<input type="submit" value="Pesquisar">
 </form>
 </html>
