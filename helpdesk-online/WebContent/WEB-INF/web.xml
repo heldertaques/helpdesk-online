@@ -31,7 +31,7 @@
     <servlet-name>CadastroUsuario</servlet-name>
     <url-pattern>/CadastroUsuario</url-pattern>
   </servlet-mapping>
-  
+
   <servlet>
     <description></description>
     <display-name>Cadastro funcionario</display-name>
