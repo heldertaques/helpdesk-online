@@ -12,8 +12,8 @@
 
  <h1>CADASTRO DE FUNCIONÁRIO</h1><br><br>   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOME:<input type "text" name = "nome" size="60">
-SEXO:<input type="radio" name="sexo" value="Masculino" >Masculino<input type="radio" name="sexo" value="Feminino"> Feminino <br><br>
-CARGO:<select name="cargo">
+SEXO:<input type="radio" name="sexo" value="M" >Masculino<input type="radio" name="sexo" value="F"> Feminino <br><br>
+CARGO:<select name="funcao">
 <option value="1"></option>
 <option value="2">analista TI</option>
 <option value="3">Administrador de redes</option>
