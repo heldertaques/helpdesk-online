@@ -1,12 +1,13 @@
 package funcionarios;
 
+import java.sql.SQLException;
 import java.util.Collection;
 import java.util.LinkedList;
 
 public class Repositorio_Func implements Irepositorio {
 	
-	private Collection<Funcionario> lista = new LinkedList<Funcionario>();
-
+	public static Collection<Funcionario> lista  = new LinkedList<Funcionario>();
+	
 	
 	public void inserir(Funcionario func) {
 		lista.add(func);
@@ -39,4 +40,11 @@ public class Repositorio_Func implements Irepositorio {
 	public  Collection<Funcionario> todos() {
 		return lista;
 	}
+
+
+	public void editar(Funcionario func) throws ClassNotFoundException,SQLException {
+			
+			}
+	
+	
 }
