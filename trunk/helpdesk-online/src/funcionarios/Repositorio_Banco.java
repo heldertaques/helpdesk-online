@@ -17,19 +17,20 @@ public class Repositorio_Banco implements Irepositorio {
 		
 		Connection con = Conexao.conectarBanco();
 		
-		String sql = ("insert into funcionarios(matricula,nome,telefone,endereco,funcao,sexo,cpf,email,cidade,bairro) values(?,?,?,?,?,?,?,?,?,?");
+		String sql = ("insert into funcionarios(nome,telefone,endereco,cd_cargo,sexo,cpf,email,cidade,bairro) values(?,?,?,?,?,?,?,?,?)");
 		PreparedStatement ps = con.prepareStatement(sql);
 		
-		ps.setString(1,func.getMatricula());
-		ps.setString(2,func.getNome());
-		ps.setString(3, func.getTelefone());
-		ps.setString(4, func.getEndereco());
-		ps.setString(5, func.getFuncao());
-		ps.setString(6, func.getSexo());
-		ps.setString(7, func.getCpf());
-		ps.setString(8, func.getEmail());
-		ps.setString(9,func.getCidade());
-		ps.setString(10, func.getBairro());
+		//ps.setString(1,"nextval('seq_codigo_func')");
+		ps.setString(1,func.getNome());
+		ps.setString(2, func.getTelefone());
+		ps.setString(3, func.getEndereco());
+		ps.setInt(4, Integer.parseInt(func.getFuncao()));
+		ps.setString(5, func.getSexo());
+		ps.setString(6, func.getCpf());
+		ps.setString(7, func.getEmail());
+		ps.setString(8,func.getCidade());
+		ps.setString(9, func.getBairro());
+		ps.execute();
 		
 	}
 
