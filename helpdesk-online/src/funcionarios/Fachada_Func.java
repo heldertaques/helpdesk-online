@@ -1,7 +1,9 @@
 package funcionarios;
 
+import java.sql.SQLException;
 import java.util.Collection;
 
+import exception.Funcionario_nao_cadastrado;
 import exception.Matricula_nao_encontrada;
 import exception.Matricula_vazia;
 import exception.Nome_Vazio;
@@ -10,32 +12,39 @@ public class Fachada_Func {
 
 	private Cadastro_Func c = new Cadastro_Func();
 	
-	public void inserir(String nome,String matricula,String telefone, String endereco,String funcao) throws Nome_Vazio, Matricula_vazia{
+	public void inserir(String matricula,String nome,String telefone, String endereco,String funcao,String sexo, String cpf,String email,String cidade,String bairro) throws Nome_Vazio, Matricula_vazia, ClassNotFoundException, SQLException{
 		
 		Funcionario func = new Funcionario();
 		
-		func.setNome(nome);
 		func.setMatricula(matricula);
+		func.setNome(nome);
 		func.setTelefone(telefone);
 		func.setEndereco(endereco);
 		func.setFuncao(funcao);
+		func.setSexo(sexo);
+		func.setCpf(cpf);
+		func.setEmail(email);
+		func.setCidade(cidade);
+		func.setBairro(bairro);
 		
 		c.inserir(func);
 		
 	}
 	
 	
-	public Funcionario pesquisar(String matricula) throws Matricula_nao_encontrada{
+
+	public Funcionario pesquisar(String matricula) throws Matricula_nao_encontrada, Funcionario_nao_cadastrado, ClassNotFoundException, SQLException{
+
 		
 		return c.pesquisar(matricula);
 		
 	}
 	
-	public void excluir(String matricula) throws Matricula_nao_encontrada{
+	public void excluir(String matricula) throws Matricula_nao_encontrada, Funcionario_nao_cadastrado, ClassNotFoundException, SQLException {
 		c.excluir(matricula);
 	}
 	
-	public  Collection<Funcionario> todos(){
+	public  Collection<Funcionario> todos() throws ClassNotFoundException, SQLException{
 		return c.todos(); 
 		
 	}

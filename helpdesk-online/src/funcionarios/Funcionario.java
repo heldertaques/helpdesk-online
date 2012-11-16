@@ -2,11 +2,16 @@ package funcionarios;
 
 public class Funcionario {
 	
-	private String nome;
 	private String matricula;
+	private String nome;
 	private String telefone;
 	private String endereco;
 	private String funcao;
+	private String sexo;
+	private String cpf;
+	private String email;
+	private String cidade;
+	private String bairro;
 	
 	public String getNome() {
 		return nome;
@@ -38,7 +43,36 @@ public class Funcionario {
 	public void setFuncao(String funcao) {
 		this.funcao = funcao;
 	}
+	public String getSexo() {
+		return sexo;
+	}
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getCidade() {
+		return cidade;
+	}
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+	public String getBairro() {
+		return bairro;
+	}
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
 	
-	
-
 }
+	
