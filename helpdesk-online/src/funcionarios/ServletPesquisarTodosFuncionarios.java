@@ -1,33 +1,38 @@
 package funcionarios;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.Collection;
+import java.util.LinkedList;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ServletPesquisarTodosFuncionarios
- */
 public class ServletPesquisarTodosFuncionarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public ServletPesquisarTodosFuncionarios() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Collection<Funcionario> func = (Collection<Funcionario>) new  LinkedList<Funcionario>();
+		Fachada_Func ff = new Fachada_Func();
+		
+		try {
+			func = ff.todos();
+			System.out.println(func.size());
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
 }
