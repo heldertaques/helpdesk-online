@@ -10,4 +10,5 @@ public interface Irepositorio {
 	public void excluir(String matricula) throws ClassNotFoundException, SQLException;
 	public  Collection<Funcionario> todos() throws ClassNotFoundException, SQLException;
 	public void editar(Funcionario func) throws ClassNotFoundException, SQLException;
+	public Collection<Funcionario> UsuariosNaoCadastrado() throws ClassNotFoundException, SQLException;
 }

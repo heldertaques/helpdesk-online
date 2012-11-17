@@ -25,14 +25,12 @@ public class ServletPesquisarFuncionariosNaoUsuarios extends HttpServlet {
 		Fachada_Func ff = new Fachada_Func();
 		
 		try {
-			listaFunc = ff.todos();
+			listaFunc = ff.UsuariosNaoCadastrado();
 			request.getSession().setAttribute("listaFuncionarios", listaFunc);
 			response.sendRedirect("FuncionariosCadastrados.jsp");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
