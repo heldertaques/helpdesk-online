@@ -1,18 +1,18 @@
 package usuario;
 
 public class Usuario {
-	private String nome;
+	private int codigo;
 	private String loginName;
 	private String senha;
 	private int privilegio;
 	private int status;
 	
-	public String getNome() {
-		return nome;
+	public int getCodigo() {
+		return codigo;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	 }
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
 	public String getLoginName() {
 		return loginName;
 	}
