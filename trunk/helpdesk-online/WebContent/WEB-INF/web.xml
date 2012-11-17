@@ -42,12 +42,12 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ServletPesquisarTodosFuncionarios</display-name>
-    <servlet-name>ServletPesquisarTodosFuncionarios</servlet-name>
-    <servlet-class>funcionarios.ServletPesquisarTodosFuncionarios</servlet-class>
+    <display-name>ServletPesquisarFuncionariosNaoUsuarios</display-name>
+    <servlet-name>ServletPesquisarFuncionariosNaoUsuarios</servlet-name>
+    <servlet-class>funcionarios.ServletPesquisarFuncionariosNaoUsuarios</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ServletPesquisarTodosFuncionarios</servlet-name>
-    <url-pattern>/ServletPesquisarTodosFuncionarios</url-pattern>
+    <servlet-name>ServletPesquisarFuncionariosNaoUsuarios</servlet-name>
+    <url-pattern>/ServletPesquisarFuncionariosNaoUsuarios</url-pattern>
   </servlet-mapping>
 </web-app>

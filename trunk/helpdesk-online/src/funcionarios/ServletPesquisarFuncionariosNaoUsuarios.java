@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ServletPesquisarTodosFuncionarios extends HttpServlet {
+public class ServletPesquisarFuncionariosNaoUsuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public ServletPesquisarTodosFuncionarios() {
+    public ServletPesquisarFuncionariosNaoUsuarios() {
         super();
     }
 
