@@ -11,10 +11,10 @@ public class RepositorioUsuario implements InterfaceUsuario{
 
 	public void inserirUsuario(Usuario usuario) throws ClassNotFoundException, SQLException {
 		Connection con = Conexao.conectarBanco();
-		String sql = ("insert into usuarios (ulogin, unome, usenha, uprivilegio, ustatus) values (?,?,md5(?),?,?)");
+		String sql = ("insert into usuarios (login, codigo, senha, privilegio, status) values (?,?,md5(?),?,?)");
 		PreparedStatement pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, usuario.getLoginName());
-		pstmt.setString(2, usuario.getNome());
+		pstmt.setInt(2, usuario.getCodigo());
 		pstmt.setString(3, usuario.getSenha());
 		pstmt.setInt(4, usuario.getPrivilegio());
 		pstmt.setInt(5, usuario.getStatus());

@@ -10,7 +10,7 @@
 <body>
 <div id='cssmenu'>
 <ul>
-   <li class='active '><a href='Principal.jsp'><span>Home</span></a></li>
+   <li><a href='Principal.jsp'><span>Home</span></a></li>
    <li class='has-sub '><a href='#'><span>Ocorrências</span></a>
       <ul>
          <li><a href='#'><span>Inicio</span></a></li>

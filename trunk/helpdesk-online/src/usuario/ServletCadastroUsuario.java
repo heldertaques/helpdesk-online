@@ -21,8 +21,9 @@ public class ServletCadastroUsuario extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		FachadaCadastroUsuario cadastroUsuario = new FachadaCadastroUsuario();
 		try {
-			cadastroUsuario.inserirUsuario(request.getParameter("nome"), request.getParameter("loginName"),
+			cadastroUsuario.inserirUsuario(request.getParameter("codigo"), request.getParameter("loginName"),
 					request.getParameter("senha"), request.getParameter("privilegio"), request.getParameter("status"));
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {

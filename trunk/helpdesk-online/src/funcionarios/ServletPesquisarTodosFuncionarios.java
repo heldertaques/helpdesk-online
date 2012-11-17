@@ -21,12 +21,13 @@ public class ServletPesquisarTodosFuncionarios extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Collection<Funcionario> func = (Collection<Funcionario>) new  LinkedList<Funcionario>();
+		Collection<Funcionario> listaFunc = (Collection<Funcionario>) new  LinkedList<Funcionario>();
 		Fachada_Func ff = new Fachada_Func();
 		
 		try {
-			func = ff.todos();
-			System.out.println(func.size());
+			listaFunc = ff.todos();
+			request.getSession().setAttribute("listaFuncionarios", listaFunc);
+			response.sendRedirect("FuncionariosCadastrados.jsp");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

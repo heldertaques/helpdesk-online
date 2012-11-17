@@ -10,7 +10,7 @@
 <body>
 <div id='cssmenu'>
 <ul>
-   <li class='active '><a href='Principal.jsp'><span>Home</span></a></li>
+   <li><a href='Principal.jsp'><span>Home</span></a></li>
    <li class='has-sub '><a href='#'><span>Ocorrências</span></a>
       <ul>
          <li><a href='#'><span>Inicio</span></a></li>
@@ -51,8 +51,9 @@
 <form action="CadastroUsuario" method="post">
 <table border="2">
 <tr>
-<td bordercolor="transparent">Nome:<br><input type="text" name="nome" id="nome" size="30"></td>
+<td bordercolor="transparent">Nome:<br><input type="text" name="nome" id="nome" size="30" value="${param.nome}"></td>
 <td bordercolor="transparent">Login:<br><input type="text" name="loginName" id="loginName"></td>
+<td><input type="hidden" name="codigo" value="${param.mat}"></td>
 </tr>
 <tr>
 <td bordercolor="transparent">Senha:<br><input type="password" name="senha" id="senha"></td>
