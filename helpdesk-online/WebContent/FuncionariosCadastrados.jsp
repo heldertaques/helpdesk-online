@@ -8,7 +8,7 @@
 <title>Lista de Funcionarios Cadastrados</title>
 <link href="menu_assets/styles.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body onload="ServletPesquisarFuncionariosNaoUsuarios">
 <div id='cssmenu'>
 <ul>
    <li ><a href='Principal.jsp'><span>Home</span></a></li>
@@ -37,7 +37,7 @@
 </div>
 <br><br>
 Clique no funcionáro que deseja habilitar como usuário.
-<form action="ServletPesquisarTodosFuncionarios"  method="post" onreset="ServletPesquisarTodosFuncionarios">
+<form action="ServletPesquisarFuncionariosNaoUsuarios"  method="post">
 <table border="1">
 	<tr>
 	<td bordercolor="transparent">Matricula</td>
@@ -50,7 +50,7 @@ Clique no funcionáro que deseja habilitar como usuário.
 	</tr>	
 	</c:forEach>
 </table><br><br>
-<input type="submit">
+<input type="submit" value="Listar Funcionários">
 </form>
 </body>
 

@@ -122,6 +122,30 @@ public class Repositorio_Banco implements Irepositorio {
 			ps.setString(10, func.getMatricula());		
 			ps.executeQuery(); 
 		}
+	public Collection<Funcionario> UsuariosNaoCadastrado() throws ClassNotFoundException, SQLException {
+		
+		Collection<Funcionario> listaFunc = new LinkedList<Funcionario>();
+		
+		Connection con = Conexao.conectarBanco();
+		
+		String sql = ("select f.matricula, f.nome from funcionarios f " +
+				"left join usuarios u on f.matricula = u.codigo " +
+				"where matricula not in (select codigo from usuarios)");
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(sql);
+		
+		while(rs.next()){
+			
+			Funcionario func = new Funcionario();
+			
+			func.setMatricula(rs.getString("matricula"));
+			func.setNome(rs.getString("nome"));
+						
+			listaFunc.add(func);
+		}
+		
+		return listaFunc;
+	}
 
 		
 	}
