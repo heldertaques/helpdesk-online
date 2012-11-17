@@ -45,6 +45,13 @@ public class Repositorio_Func implements Irepositorio {
 	public void editar(Funcionario func) throws ClassNotFoundException,SQLException {
 			
 			}
+
+	@Override
+	public Collection<Funcionario> UsuariosNaoCadastrado()
+			throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }

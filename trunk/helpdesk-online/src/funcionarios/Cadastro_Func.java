@@ -2,6 +2,7 @@ package funcionarios;
 
 import java.sql.SQLException;
 import java.util.Collection;
+import java.util.LinkedList;
 
 
 import exception.Funcionario_nao_cadastrado;
@@ -76,6 +77,13 @@ public class Cadastro_Func {
 	
 	public  Collection<Funcionario> todos() throws ClassNotFoundException, SQLException {
 		return I.todos();
+	}
+
+	public Collection<Funcionario> UsuariosNaoCadastrados() throws ClassNotFoundException, SQLException
+	{
+		Collection<Funcionario> listaFunc = new LinkedList<Funcionario>();
+		listaFunc = I.UsuariosNaoCadastrado();
+		return listaFunc;
 	}
 }
 

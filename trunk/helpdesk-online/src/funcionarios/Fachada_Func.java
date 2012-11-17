@@ -48,4 +48,8 @@ public class Fachada_Func {
 		return c.todos(); 
 		
 	}
+	public Collection<Funcionario> UsuariosNaoCadastrado() throws ClassNotFoundException, SQLException
+	{
+		return c.UsuariosNaoCadastrados();
+	}
 }
