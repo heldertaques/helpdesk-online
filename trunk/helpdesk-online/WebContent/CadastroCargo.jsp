@@ -48,9 +48,9 @@
 </tr>
 </table><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="submit" value="Cadastrar" align="middle">
+<input type="submit" value="Cadastrar">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="Button" value="Cancelar" onclick="cancelarCadastro()" align="middle">
+<input type="Button" value="Cancelar" onclick="cancelarCadastro()">
 </form>
 
 </body>

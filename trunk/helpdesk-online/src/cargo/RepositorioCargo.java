@@ -1,6 +1,7 @@
 package cargo;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -9,8 +10,13 @@ import conexao.Conexao;
 
 public class RepositorioCargo implements InterfaceCargo{
 
-	public void inserirCargo(Cargo cargo) {
-		
+	public void inserirCargo(Cargo cargo) throws ClassNotFoundException, SQLException {
+		Connection con = Conexao.conectarBanco();
+		String sql = ("insert into cargos values(?,?)");
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, cargo.getCodigo());
+		pstmt.setString(2, cargo.getDescricao());
+		pstmt.executeUpdate();
 	}
 	
 	public Integer pesquisarProximoCodCargo() throws ClassNotFoundException, SQLException{
