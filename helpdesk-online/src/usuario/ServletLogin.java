@@ -15,10 +15,6 @@ public class ServletLogin extends HttpServlet {
         super();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	}
-
-	@SuppressWarnings("static-access")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		FachadaCadastroUsuario fc = new FachadaCadastroUsuario();
 		Usuario u = new Usuario();
@@ -36,7 +32,6 @@ public class ServletLogin extends HttpServlet {
 		String senhaMd5 = md5.md5(senha); 
 		
 		if(senhaMd5.equals(u.getSenha())) {
-			System.out.println("Senha válida");
 			response.sendRedirect("Principal.jsp");
 		}
 		

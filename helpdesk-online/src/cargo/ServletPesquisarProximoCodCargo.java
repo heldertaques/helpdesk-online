@@ -14,12 +14,15 @@ public class ServletPesquisarProximoCodCargo extends HttpServlet {
     public ServletPesquisarProximoCodCargo() {
         super();
     }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	doPost(request, response);
+    }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		FachadaCargo fachadaCargo = new FachadaCargo();
 		try {
 			int codCargo = fachadaCargo.pesquisarProximoCodCargo();
-			System.out.println(codCargo);
+			response.sendRedirect("CadastroCargo.jsp?codCargo="+codCargo);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
