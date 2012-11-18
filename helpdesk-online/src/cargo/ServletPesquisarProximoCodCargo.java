@@ -8,13 +8,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ServletCadastroCargo extends HttpServlet {
+public class ServletPesquisarProximoCodCargo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public ServletCadastroCargo() {
+    public ServletPesquisarProximoCodCargo() {
         super();
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		FachadaCargo fachadaCargo = new FachadaCargo();
+		try {
+			int codCargo = fachadaCargo.pesquisarProximoCodCargo();
+			System.out.println(codCargo);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 	}
+
 }

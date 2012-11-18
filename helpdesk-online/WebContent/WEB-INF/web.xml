@@ -54,10 +54,20 @@
     <description></description>
     <display-name>CadastroCargo</display-name>
     <servlet-name>CadastroCargo</servlet-name>
-    <servlet-class>cargos.ServletCadastroCargo</servlet-class>
+    <servlet-class>cargo.ServletCadastroCargo</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>CadastroCargo</servlet-name>
     <url-pattern>/CadastroCargo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PesquisarProximoCodCargo</display-name>
+    <servlet-name>PesquisarProximoCodCargo</servlet-name>
+    <servlet-class>cargo.ServletPesquisarProximoCodCargo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PesquisarProximoCodCargo</servlet-name>
+    <url-pattern>/PesquisarProximoCodCargo</url-pattern>
   </servlet-mapping>
 </web-app>
