@@ -1,6 +1,7 @@
 package cargo;
 
 import java.sql.SQLException;
+import java.util.Collection;
 
 public class FachadaCargo {
 	CadastroCargo cadCargo = new CadastroCargo();
@@ -15,5 +16,8 @@ public class FachadaCargo {
 	public Integer pesquisarProximoCodCargo() throws ClassNotFoundException, SQLException{
 		
 		return cadCargo.pesquisarProximoCodCargo();
+	}
+	public Collection<Cargo> pesquisarTodosCargos() throws ClassNotFoundException, SQLException{
+		return cadCargo.pesquisarTodosCargos();
 	}
 }
