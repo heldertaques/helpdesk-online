@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Help Desk - Online</title>
+<title>Cadastro de Usuarios</title>
 <link href="menu_assets/styles.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body onload="carregarCargo()">
 <div id='cssmenu'>
 <ul>
    <li><a href='Principal.jsp'><span>Home</span></a></li>
@@ -21,7 +21,7 @@
    <li class='has-sub '><a href='#'><span>Administração</span></a>
       <ul>
          <li><a href='TelaCadastro.jsp'><span>Cadastrar Funcionarios</span></a></li>
-         <li><a href='FuncionariosCadastrados.jsp'><span>Cadastrar Usuário</span></a></li>
+         <li><a href='CadastroUsuario.jsp'><span>Cadastrar Usuário</span></a></li>
          <li><a href='CadastroCargo.jsp'><span>Cadastrar Cargo</span></a></li>
          <li><a href='#'><span>Alterar Funcionario</span></a></li>
          <li><a href='#'><span>Alterar Usuário</span></a></li>
@@ -35,5 +35,38 @@
    </li>
 </ul>
 </div>
+<script>
+	function cancelarCadastro(){
+		location.href = "Principal.jsp";
+	}
+	function carregarCargo(){
+		var oRequest = new XMLHttpRequest();
+		oRequest.open("post", "/PesquisarProximoCodCargo");
+	}
+</script>
+<br><br><br>
+<table width="50%">
+<tbody>
+<tr>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<form action="CadastroCargo" method="post">
+<table border="2">
+<tr>
+<td bordercolor="transparent">Codigo:<br><input type="text" name="cod" readonly="readonly" id="cod" size="15" value="${param.nome}"></td>
+<td bordercolor="transparent">Descrição:<br><input type="text" name="desc" id="desc"></td>
+</tr>
+</table><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" value="Cadastrar">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="Button" value="Cancelar" onclick="cancelarCadastro()">
+</form>
+
 </body>
 </html>
