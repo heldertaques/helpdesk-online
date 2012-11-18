@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cadastro de Usuarios</title>
+<title>Cadastro de Cargos</title>
 <link href="menu_assets/styles.css" rel="stylesheet" type="text/css">
 </head>
-<body onload="carregarCargo()">
+<body>
 <div id='cssmenu'>
 <ul>
    <li><a href='Principal.jsp'><span>Home</span></a></li>
@@ -21,8 +21,8 @@
    <li class='has-sub '><a href='#'><span>Administração</span></a>
       <ul>
          <li><a href='TelaCadastro.jsp'><span>Cadastrar Funcionarios</span></a></li>
-         <li><a href='CadastroUsuario.jsp'><span>Cadastrar Usuário</span></a></li>
-         <li><a href='CadastroCargo.jsp'><span>Cadastrar Cargo</span></a></li>
+         <li><a href='ServletPesquisarFuncionariosNaoUsuarios'><span>Cadastrar Usuário</span></a></li>
+         <li><a href='PesquisarProximoCodCargo'><span>Cadastrar Cargo</span></a></li>
          <li><a href='#'><span>Alterar Funcionario</span></a></li>
          <li><a href='#'><span>Alterar Usuário</span></a></li>
       </ul>
@@ -33,39 +33,24 @@
          <li><a href='#'><span>Chamados Atendidos no SLA</span></a></li>
       </ul>
    </li>
-</ul>
-</div>
+</ul></div>
 <script>
 	function cancelarCadastro(){
 		location.href = "Principal.jsp";
 	}
-	function carregarCargo(){
-		var oRequest = new XMLHttpRequest();
-		oRequest.open("post", "/PesquisarProximoCodCargo");
-	}
 </script>
-<br><br><br>
-<table width="50%">
-<tbody>
-<tr>
-<td>
-</td>
-</tr>
-</tbody>
-</table>
+<h1>Cadastro de Cargos</h1>
 <form action="CadastroCargo" method="post">
 <table border="2">
 <tr>
-<td bordercolor="transparent">Codigo:<br><input type="text" name="cod" readonly="readonly" id="cod" size="15" value="${param.nome}"></td>
+<td bordercolor="transparent">Codigo:<br><input type="text" name="cod" readonly="readonly" id="cod" size="15" value="${param.codCargo}"></td>
 <td bordercolor="transparent">Descrição:<br><input type="text" name="desc" id="desc"></td>
 </tr>
 </table><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" value="Cadastrar" align="middle">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="submit" value="Cadastrar">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="Button" value="Cancelar" onclick="cancelarCadastro()">
+<input type="Button" value="Cancelar" onclick="cancelarCadastro()" align="middle">
 </form>
 
 </body>

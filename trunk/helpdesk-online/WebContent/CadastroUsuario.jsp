@@ -39,15 +39,7 @@
 		location.href = "Principal.jsp";
 	}
 </script>
-<br><br><br>
-<table width="50%">
-<tbody>
-<tr>
-<td>
-</td>
-</tr>
-</tbody>
-</table>
+<h1>Cadastro de Usuário</h1>
 <form action="CadastroUsuario" method="post">
 <table border="2">
 <tr>
@@ -63,7 +55,7 @@
 	<option value="0">Desativado</option>
 </select>
 </td>
-<td bordercolor="transparent">Privilégio<br>
+<td bordercolor="transparent">Tipo de Acesso<br>
 <select name="privilegio" id="privilegio">
 	<option value="1">Administrador</option>
 	<option value="2">Operador</option>

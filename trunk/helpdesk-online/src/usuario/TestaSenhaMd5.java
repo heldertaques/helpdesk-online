@@ -7,7 +7,7 @@ package usuario;
 	public class TestaSenhaMd5 {
 
 	    //Função para criar hash da senha informada  
-	    public static String md5(String senha){  
+	    public String md5(String senha){  
 	        String sen = "";  
 	        MessageDigest md = null;  
 	        try {  
