@@ -70,4 +70,14 @@
     <servlet-name>PesquisarProximoCodCargo</servlet-name>
     <url-pattern>/PesquisarProximoCodCargo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PesquisarTodosCargos</display-name>
+    <servlet-name>PesquisarTodosCargos</servlet-name>
+    <servlet-class>cargo.ServletPesquisarTodosCargos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PesquisarTodosCargos</servlet-name>
+    <url-pattern>/PesquisarTodosCargos</url-pattern>
+  </servlet-mapping>
 </web-app>
