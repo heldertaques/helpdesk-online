@@ -1,13 +1,13 @@
 package usuario;
 
 import java.sql.SQLException;
+import java.util.Collection;
 
 public class FachadaCadastroUsuario {
-	
+	CadastroUsuario cadUsuario = new CadastroUsuario();
 	public void inserirUsuario(String codigo, String loginName, String senha, String privilegio, String status) throws ClassNotFoundException, SQLException
 	{
 		Usuario u = new Usuario();
-		CadastroUsuario cadastroUsuario = new CadastroUsuario();
 		
 		u.setCodigo(Integer.parseInt(codigo));
 		u.setLoginName(loginName);
@@ -15,16 +15,26 @@ public class FachadaCadastroUsuario {
 		u.setPrivilegio(Integer.parseInt(privilegio));
 		u.setStatus(Integer.parseInt(status));
 		
-		cadastroUsuario.inserirUsuario(u);
+		cadUsuario.inserirUsuario(u);
 	}
 	
 	public Usuario pesquisarPorLogin(String login, String senha) throws ClassNotFoundException, SQLException
 	{
 		Usuario u = new Usuario();
-		CadastroUsuario c = new CadastroUsuario();
-		u = c.pesquisarPorLogin(login,senha);
+		u = cadUsuario.pesquisarPorLogin(login,senha);
 		return u;
 	}
-	
+	public void alterarUsuario(String codigo, String login, String privilegio, String senha, String status){
+		Usuario u = new Usuario();
+		u.setCodigo(Integer.parseInt(codigo));
+		u.setLoginName(login);
+		u.setPrivilegio(Integer.parseInt(privilegio));
+		u.setSenha(senha);
+		u.setStatus(Integer.parseInt(status));
+		cadUsuario.alterarUsuario(u);
+	}
+	public Collection<Usuario> pesquisarTodosUsuarios() throws ClassNotFoundException, SQLException{
+		return cadUsuario.pesquisarTodosUsuarios();
+	}
 
 }

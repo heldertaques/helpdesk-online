@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Collection;
 
 import conexao.Conexao;
 
@@ -38,4 +40,18 @@ public class RepositorioUsuario implements InterfaceUsuario{
 			u.setStatus(rs.getInt("ustatus"));
 		}
 		return u;	}
+
+	public Collection<Usuario> pesquisarTodosUsuarios() throws ClassNotFoundException, SQLException {
+		Connection con = Conexao.conectarBanco();
+		String sql = "select * from usuarios";
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		while(rs.next()){
+			Usuario u = new Usuario();
+			u.setCodigo(rs.getInt("codigo"));
+			u.setLoginName(rs.getString("login"));
+		}
+		
+		return null;
+	}
 }
