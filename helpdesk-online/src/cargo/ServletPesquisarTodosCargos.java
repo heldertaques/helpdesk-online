@@ -32,7 +32,7 @@ public class ServletPesquisarTodosCargos extends HttpServlet {
 			}*/
 			
 			request.getSession().setAttribute("listaCargo", listaCargo);
-			response.sendRedirect("TelaCadastro.jsp");
+			response.sendRedirect("CadastroFuncionario.jsp");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {

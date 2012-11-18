@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Cadastro de Funcionários</title>
 </head>
 <body>
 <form action="CadastroFunc"method="post">
