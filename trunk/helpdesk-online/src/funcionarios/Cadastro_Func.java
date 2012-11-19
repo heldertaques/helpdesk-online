@@ -18,10 +18,11 @@ public class Cadastro_Func {
 	private Irepositorio I = new Repositorio_Banco();
 	
 	
-	public void inserir(Funcionario func) throws Nome_Vazio, Matricula_vazia, ClassNotFoundException, SQLException{
+	public void inserir(Funcionario func) throws Exception{
 		
 		/*if(func.getMatricula().trim().equals("")){
 			 throw new Matricula_vazia();*/
+		
 		if (func.getNome().trim().equals("")){
 			throw new Nome_Vazio();
 	//	}else if
@@ -34,27 +35,25 @@ public class Cadastro_Func {
 
 	public Funcionario pesquisar(String matricula) throws Matricula_nao_encontrada, Funcionario_nao_cadastrado, ClassNotFoundException, SQLException {
 		
-		Funcionario func = null;
+      
+		Funcionario func = this.I.pesquisar(matricula);
 	
-		if(matricula.equals("")){
-		
-		if(func.getMatricula().equals("")){
+		if(matricula.trim().equals("")){
 			throw new Matricula_nao_encontrada();
 			
-		}else {
+		}else if(func == null){
 			
-			 func = I.pesquisar(matricula);
-			 
-			if(func == null){
-				
-				throw new Funcionario_nao_cadastrado();
+			throw new Funcionario_nao_cadastrado();		 
+			
 			}
-		}
-		}
 		return func;
+		}
 		
-	}
-
+		
+		
+	
+		//return null;
+	
 
 	public void excluir(String matricula) throws Matricula_nao_encontrada, Funcionario_nao_cadastrado, ClassNotFoundException, SQLException {
 
@@ -76,8 +75,21 @@ public class Cadastro_Func {
 	}
 	
 	public  Collection<Funcionario> todos() throws ClassNotFoundException, SQLException {
-		return I.todos();
+		return this.I.todos();
 	}
+
+	
+	public void editar(Funcionario func) throws ClassNotFoundException, SQLException, Matricula_nao_encontrada, Funcionario_nao_cadastrado{
+		
+		if(pesquisar(func.getMatricula()) == null){
+		   throw new Matricula_nao_encontrada();
+		}else if(func.getMatricula().trim().isEmpty()){
+			throw new Matricula_nao_encontrada();
+		}else{
+			I.editar(func);
+		}
+	}
+
 
 	public Collection<Funcionario> UsuariosNaoCadastrados() throws ClassNotFoundException, SQLException
 	{

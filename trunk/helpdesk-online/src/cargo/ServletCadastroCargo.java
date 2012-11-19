@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class ServletCadastroCargo extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
        
     public ServletCadastroCargo() {
@@ -16,6 +17,7 @@ public class ServletCadastroCargo extends HttpServlet {
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 		FachadaCargo fachadaCargo = new FachadaCargo();
 		try {
 			fachadaCargo.inserirCargo(request.getParameter("cod"), request.getParameter("desc"));

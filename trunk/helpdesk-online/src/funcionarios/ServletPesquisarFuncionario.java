@@ -2,38 +2,48 @@ package funcionarios;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Collection;
-import java.util.LinkedList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ServletPesquisarFuncionariosNaoUsuarios extends HttpServlet {
+import exception.Funcionario_nao_cadastrado;
+import exception.Matricula_nao_encontrada;
+
+public class ServletPesquisarFuncionario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public ServletPesquisarFuncionariosNaoUsuarios() {
+    public ServletPesquisarFuncionario() {
         super();
+
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		
-		Collection<Funcionario> listaFunc = (Collection<Funcionario>) new  LinkedList<Funcionario>();
-		Fachada_Func ff = new Fachada_Func();
+		Fachada_Func f = new Fachada_Func();
+		
 		
 		try {
-			listaFunc = ff.UsuariosNaoCadastrado();
-			request.getSession().setAttribute("listaFuncionarios", listaFunc);
-			response.sendRedirect("FuncionariosCadastrados.jsp");
+			f.pesquisar(request.getParameter("matricula"));
 		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Matricula_nao_encontrada e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Funcionario_nao_cadastrado e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+
 }

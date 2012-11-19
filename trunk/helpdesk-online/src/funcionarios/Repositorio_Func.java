@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class Repositorio_Func implements Irepositorio {
 	
-	public static Collection<Funcionario> lista  = new LinkedList<Funcionario>();
+	private static Collection<Funcionario> lista  = new LinkedList<Funcionario>();
 	
 	
 	public void inserir(Funcionario func) {
@@ -43,8 +43,12 @@ public class Repositorio_Func implements Irepositorio {
 
 
 	public void editar(Funcionario func) throws ClassNotFoundException,SQLException {
+		
+			Funcionario funcionario = pesquisar(func.getMatricula());
+			((LinkedList<Funcionario>) this.lista).set(((LinkedList<Funcionario>) this.lista).indexOf(funcionario), func);
+		}
+		
 			
-			}
 
 	@Override
 	public Collection<Funcionario> UsuariosNaoCadastrado()
@@ -53,5 +57,11 @@ public class Repositorio_Func implements Irepositorio {
 		return null;
 	}
 	
+	//função que procura o indice do usuario
 	
+		public int indexUsuario(String matricula){
+			
+			Funcionario func = pesquisar(matricula);
+			return ((LinkedList<Funcionario>) this.lista).indexOf(func);
+		}		
 }
