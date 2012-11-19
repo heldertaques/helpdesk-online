@@ -39,13 +39,15 @@
 Clique no funcionáro que deseja habilitar como usuário.
 <table border="1">
 	<tr>
-	<td bordercolor="transparent">Matricula</td>
-	<td bordercolor="transparent" width="300">Nome</td>
+	<td bordercolor="transparent">Código</td>
+	<td bordercolor="transparent">Nome</td>
+	<td bordercolor="transparent" width="300">Login</td>
 	</tr>
-	<c:forEach items="${listaFuncionarios}" var="funcionarios">
+	<c:forEach items="${listaUsuario}" var="usuarios">
 	<tr>
-	<td> <a href="CadastroUsuario.jsp?mat=${funcionarios.matricula}&nome=${funcionarios.nome}">${funcionarios.matricula}</a></td>
-	<td> <a href="CadastroUsuario.jsp?mat=${funcionarios.matricula}&nome=${funcionarios.nome}">${funcionarios.nome}</a></td>
+	<td> <a href="AlterarUsuario.jsp?codigo=${usuarios.codigo}&nome=${usuarios.nome}&login=${usuarios.loginName}">${usuarios.codigo}</a></td>
+	<td> <a href="AlterarUsuario.jsp?codigo=${usuarios.codigo}&nome=${usuarios.nome}&login=${usuarios.loginName}">${usuarios.nome}</a></td>
+	<td> <a href="AlterarUsuario.jsp?codigo=${usuarios.codigo}&nome=${usuarios.nome}&login=${usuarios.loginName}">${usuarios.loginName}</a></td>	
 	</tr>	
 	</c:forEach>
 </table><br><br>

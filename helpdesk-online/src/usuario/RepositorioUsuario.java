@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Collection;
+import java.util.LinkedList;
 
 import conexao.Conexao;
 
@@ -43,15 +44,19 @@ public class RepositorioUsuario implements InterfaceUsuario{
 
 	public Collection<Usuario> pesquisarTodosUsuarios() throws ClassNotFoundException, SQLException {
 		Connection con = Conexao.conectarBanco();
-		String sql = "select * from usuarios";
+		Collection<Usuario> listaUsuario = new LinkedList<Usuario>();
+		String sql = "select  u.codigo, f.nome, u.login from usuarios u " +
+				"inner join funcionarios f on f.matricula = u.codigo";
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery(sql);
 		while(rs.next()){
 			Usuario u = new Usuario();
 			u.setCodigo(rs.getInt("codigo"));
+			u.setNome(rs.getString("nome"));
 			u.setLoginName(rs.getString("login"));
+			listaUsuario.add(u);
 		}
 		
-		return null;
+		return listaUsuario;
 	}
 }

@@ -24,7 +24,7 @@
          <li><a href='ServletPesquisarFuncionariosNaoUsuarios'><span>Cadastrar Usuário</span></a></li>
          <li><a href='PesquisarProximoCodCargo'><span>Cadastrar Cargo</span></a></li>
          <li><a href='#'><span>Alterar Funcionario</span></a></li>
-         <li><a href='#'><span>Alterar Usuário</span></a></li>
+         <li><a href='PesquisarTodosUsuarios'><span>Alterar Usuário</span></a></li>
       </ul>
    </li>
    <li class='has-sub '><a href='#'><span>Relatórios</span></a>
