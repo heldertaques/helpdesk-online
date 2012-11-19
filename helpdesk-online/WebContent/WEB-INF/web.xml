@@ -80,6 +80,17 @@
     <servlet-name>PesquisarTodosCargos</servlet-name>
     <url-pattern>/PesquisarTodosCargos</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>ServletPesquisarFuncionario</display-name>
+    <servlet-name>ServletPesquisarFuncionario</servlet-name>
+    <servlet-class>funcionarios.ServletPesquisarFuncionario</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletPesquisarFuncionario</servlet-name>
+    <url-pattern>/ServletPesquisarFuncionario</url-pattern>
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>AlterarUsuario</display-name>
@@ -100,4 +111,5 @@
     <servlet-name>PesquisarTodosUsuarios</servlet-name>
     <url-pattern>/PesquisarTodosUsuarios</url-pattern>
   </servlet-mapping>
+
 </web-app>

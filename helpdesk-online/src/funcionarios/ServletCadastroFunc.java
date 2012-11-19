@@ -52,6 +52,9 @@ public class ServletCadastroFunc extends HttpServlet {
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		/* PrintWriter out = response.getWriter();        

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class ServletPesquisarTodosCargos extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
        
     public ServletPesquisarTodosCargos() {
@@ -22,7 +23,9 @@ public class ServletPesquisarTodosCargos extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 		FachadaCargo fachadaCargo = new FachadaCargo();
+		
 		Collection<Cargo> listaCargo = new LinkedList<Cargo>();
 		try {
 			listaCargo = fachadaCargo.pesquisarTodosCargos();
@@ -33,6 +36,7 @@ public class ServletPesquisarTodosCargos extends HttpServlet {
 			
 			request.getSession().setAttribute("listaCargo", listaCargo);
 			response.sendRedirect("CadastroFuncionario.jsp");
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {

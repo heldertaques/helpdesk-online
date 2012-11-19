@@ -13,7 +13,7 @@ import conexao.Conexao;
 public class Repositorio_Banco implements Irepositorio {
 
 	
-	public void inserir(Funcionario func) throws ClassNotFoundException, SQLException{
+	public void inserir(Funcionario func) throws Exception{
 		
 		Connection con = Conexao.conectarBanco();
 		
@@ -24,7 +24,7 @@ public class Repositorio_Banco implements Irepositorio {
 		ps.setString(1,func.getNome());
 		ps.setString(2, func.getTelefone());
 		ps.setString(3, func.getEndereco());
-		ps.setInt(4, Integer.parseInt(func.getFuncao()));
+	    ps.setInt(4, Integer.parseInt(func.getFuncao()));
 		ps.setString(5, func.getSexo());
 		ps.setString(6, func.getCpf());
 		ps.setString(7, func.getEmail());
@@ -122,6 +122,7 @@ public class Repositorio_Banco implements Irepositorio {
 			ps.setString(10, func.getMatricula());		
 			ps.executeQuery(); 
 		}
+	
 	public Collection<Funcionario> UsuariosNaoCadastrado() throws ClassNotFoundException, SQLException {
 		
 		Collection<Funcionario> listaFunc = new LinkedList<Funcionario>();

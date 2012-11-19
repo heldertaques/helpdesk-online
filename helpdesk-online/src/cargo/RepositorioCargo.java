@@ -13,6 +13,7 @@ import conexao.Conexao;
 public class RepositorioCargo implements InterfaceCargo{
 
 	public void inserirCargo(Cargo cargo) throws ClassNotFoundException, SQLException {
+		
 		Connection con = Conexao.conectarBanco();
 		String sql = ("insert into cargos values(?,?)");
 		PreparedStatement pstmt = con.prepareStatement(sql);
@@ -22,6 +23,7 @@ public class RepositorioCargo implements InterfaceCargo{
 	}
 	
 	public Integer pesquisarProximoCodCargo() throws ClassNotFoundException, SQLException{
+		
 		Connection con = Conexao.conectarBanco();
 		String sql = ("select * from cargos order by codigo asc");
 		Statement stmt = con.createStatement();
@@ -34,6 +36,7 @@ public class RepositorioCargo implements InterfaceCargo{
 		return codCargo + 1;
 	}
 	public Collection<Cargo> pesquisarTodosCargos() throws ClassNotFoundException, SQLException{
+		
 		Collection<Cargo> listaCargo = new LinkedList<Cargo>();
 		Connection con = Conexao.conectarBanco();
 		Statement stmt = con.createStatement();
