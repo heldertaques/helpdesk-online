@@ -2,6 +2,7 @@ package usuario;
 
 public class Usuario {
 	private int codigo;
+	private String nome;
 	private String loginName;
 	private String senha;
 	private int privilegio;
@@ -12,6 +13,12 @@ public class Usuario {
 	}
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	public String getLoginName() {
 		return loginName;

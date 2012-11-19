@@ -21,8 +21,8 @@
    </li>
    <li class='has-sub '><a href='#'><span>Administração</span></a>
       <ul>
-         <li><a href='TelaCadastro.jsp'><span>Cadastrar Funcionarios</span></a></li>
-         <li><a href='FuncionariosCadastrados.jsp'><span>Cadastrar Usuário</span></a></li>
+         <li><a href='CadastroFuncionario.jsp'><span>Cadastrar Funcionarios</span></a></li>
+         <li><a href='ServletPesquisarFuncionariosNaoUsuarios'><span>Cadastrar Usuário</span></a></li>
          <li><a href='#'><span>Alterar Funcionario</span></a></li>
          <li><a href='#'><span>Alterar Usuário</span></a></li>
       </ul>
