@@ -40,6 +40,8 @@ public class ServletCadastroFunc extends HttpServlet {
 					         request.getParameter("endereco"), request.getParameter("funcao"),request.getParameter("sexo"),
 					         request.getParameter("cpf"),request.getParameter("email"),request.getParameter("cidade"),
 					         request.getParameter("bairro"));
+			response.sendRedirect("FCadastrado.jsp?msg=Cadastrado com Sucesso");
+			
 		} catch (ClassNotFoundException e) {
 			
 			e.printStackTrace();
@@ -53,16 +55,11 @@ public class ServletCadastroFunc extends HttpServlet {
 			
 			e.printStackTrace();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
-		/* PrintWriter out = response.getWriter();        
-		 out.println("<html>");
- 	     out.println("<body>");
-         out.println("O usuário: Obrigado por enviar Seus dados.");
- 	     out.println("</body>");
- 	     out.println("</html>");*/
+		
 }
 	    
 			     
