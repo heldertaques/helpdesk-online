@@ -8,7 +8,7 @@
 <title>Cadastro de Funcionários</title>
 <link href="menu_assets/styles.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body background="http://piersonrevesz.files.wordpress.com/2010/12/helpdesk.jpg">
 <div id='cssmenu'>
 <ul>
    <li><a href='Principal.jsp'><span>Home</span></a></li>
@@ -46,24 +46,24 @@
 <div align="center">
 
  <h1>CADASTRO DE FUNCIONÁRIO</h1><br><br>   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOME:<input type="text" name = "nome" size="60">
-SEXO:<input type="radio" name="sexo" value="M" >Masculino<input type="radio" name="sexo" value="F"> Feminino <br><br>
-	CARGO:<select name="funcao">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>NOME:</b><input type="text" name = "nome" size="60">
+<b>SEXO:</b><input type="radio" name="sexo" value="M" ><b>Masculino</b><input type="radio" name="sexo" value="F"><b> Feminino</b> <br><br>
+	<b>CARGO:</b><select name="funcao">
 <c:forEach items="${listaCargo}" var="cargo">
 		<option value="${cargo.codigo}">${cargo.descricao}</option>
 	</c:forEach>
 </select>
 
-CPF:<input type="text" name = "cpf"size="40"><br><br>
-EMAIL:<input type="text" name = "email"size="60"><br><br>
-TELEFONE:<input type="text" name = "telefone"><br><br>
-ENDEREÇO:<input type="text" name = "endereco"size="60"><br><br>
-CIDADE:<input type="text" name = "cidade"size="30">
-BAIRRO:<input type="text" name = "bairro"><br><br>
+<b>CPF:</b><input type="text" name = "cpf"size="40"><br><br>
+<b>EMAIL:</b><input type="text" name = "email"size="60"><br><br>
+<b>TELEFONE:</b><input type="text" name = "telefone"><br><br>
+<b>ENDEREÇO:</b><input type="text" name = "endereco"size="60"><br><br>
+<b>CIDADE:</b><input type="text" name = "cidade"size="30">
+<b>BAIRRO:</b><input type="text" name = "bairro"><br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="submit" value="Enviar Cadastro"> 
-<input type="reset" value="Cancelar" onclick="cancelarCadastro()">
+<b><input type="reset" value="Cancelar" onclick="cancelarCadastro()"></b>
 </div>
 </form>
 
