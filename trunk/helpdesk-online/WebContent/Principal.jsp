@@ -7,7 +7,7 @@
 <title>Help Desk - Online</title>
 <link href="menu_assets/styles.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body background="http://187.45.214.201/~trigueir/wp-content/uploads/2011/07/help_desk.jpg">
 <div id='cssmenu'>
 <ul>
    <li><a href='Principal.jsp'><span>Home</span></a></li>

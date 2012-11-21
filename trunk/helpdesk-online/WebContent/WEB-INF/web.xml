@@ -80,7 +80,6 @@
     <servlet-name>PesquisarTodosCargos</servlet-name>
     <url-pattern>/PesquisarTodosCargos</url-pattern>
   </servlet-mapping>
-
   <servlet>
     <description></description>
     <display-name>ServletPesquisarFuncionario</display-name>
@@ -111,5 +110,14 @@
     <servlet-name>PesquisarTodosUsuarios</servlet-name>
     <url-pattern>/PesquisarTodosUsuarios</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <description></description>
+    <display-name>SevletListarFuncionario</display-name>
+    <servlet-name>SevletListarFuncionario</servlet-name>
+    <servlet-class>funcionarios.SevletListarFuncionario</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SevletListarFuncionario</servlet-name>
+    <url-pattern>/SevletListarFuncionario</url-pattern>
+  </servlet-mapping>
 </web-app>
