@@ -82,16 +82,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ServletPesquisarFuncionario</display-name>
-    <servlet-name>ServletPesquisarFuncionario</servlet-name>
-    <servlet-class>funcionarios.ServletPesquisarFuncionario</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletPesquisarFuncionario</servlet-name>
-    <url-pattern>/ServletPesquisarFuncionario</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>AlterarUsuario</display-name>
     <servlet-name>AlterarUsuario</servlet-name>
     <servlet-class>usuario.ServletAlterarUsuario</servlet-class>
@@ -110,14 +100,16 @@
     <servlet-name>PesquisarTodosUsuarios</servlet-name>
     <url-pattern>/PesquisarTodosUsuarios</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
-    <display-name>SevletListarFuncionario</display-name>
-    <servlet-name>SevletListarFuncionario</servlet-name>
-    <servlet-class>funcionarios.SevletListarFuncionario</servlet-class>
+    <display-name>ServletListarFuncionarios</display-name>
+    <servlet-name>ServletListarFuncionarios</servlet-name>
+    <servlet-class>funcionarios.ServletListarFuncionarios</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>SevletListarFuncionario</servlet-name>
-    <url-pattern>/SevletListarFuncionario</url-pattern>
+    <servlet-name>ServletListarFuncionarios</servlet-name>
+    <url-pattern>/ServletListarFuncionarios</url-pattern>
   </servlet-mapping>
+  
 </web-app>
