@@ -45,9 +45,12 @@ Clique no funcionáro que deseja habilitar como usuário.
 	</tr>
 	<c:forEach items="${listaUsuario}" var="usuarios">
 	<tr>
-	<td> <a href="AlterarUsuario.jsp?codigo=${usuarios.codigo}&nome=${usuarios.nome}&login=${usuarios.loginName}">${usuarios.codigo}</a></td>
-	<td> <a href="AlterarUsuario.jsp?codigo=${usuarios.codigo}&nome=${usuarios.nome}&login=${usuarios.loginName}">${usuarios.nome}</a></td>
-	<td> <a href="AlterarUsuario.jsp?codigo=${usuarios.codigo}&nome=${usuarios.nome}&login=${usuarios.loginName}">${usuarios.loginName}</a></td>	
+	<td> <a href="AlterarUsuario.jsp?codigo=${usuarios.codigo}&nome=${usuarios.nome}
+			&pcodigo=${usuarios.privilegio}&status=${usuarios.status}&login=${usuarios.loginName}">${usuarios.codigo}</a></td>
+	<td> <a href="AlterarUsuario.jsp?codigo=${usuarios.codigo}&nome=${usuarios.nome}
+			&pcodigo=${usuarios.privilegio}&status=${usuarios.status}&login=${usuarios.loginName}">${usuarios.nome}</a></td>
+	<td> <a href="AlterarUsuario.jsp?codigo=${usuarios.codigo}&nome=${usuarios.nome}
+			&pcodigo=${usuarios.privilegio}&status=${usuarios.status}&login=${usuarios.loginName}">${usuarios.loginName}</a></td>	
 	</tr>	
 	</c:forEach>
 </table><br><br>

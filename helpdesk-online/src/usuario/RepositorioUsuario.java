@@ -40,13 +40,15 @@ public class RepositorioUsuario implements InterfaceUsuario{
 			u.setPrivilegio(rs.getInt("uprivilegio"));
 			u.setStatus(rs.getInt("ustatus"));
 		}
-		return u;	}
+		return u;
+		}
 
 	public Collection<Usuario> pesquisarTodosUsuarios() throws ClassNotFoundException, SQLException {
 		Connection con = Conexao.conectarBanco();
 		Collection<Usuario> listaUsuario = new LinkedList<Usuario>();
-		String sql = "select  u.codigo, f.nome, u.login from usuarios u " +
-				"inner join funcionarios f on f.matricula = u.codigo";
+		String sql = "select  u.codigo, f.nome, u.login, u.status, p.codigo as pCodigo, p.descricao from usuarios u " +
+				"inner join funcionarios f on f.matricula = u.codigo " +
+				"inner join privilegio p on u.privilegio = p.codigo";
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery(sql);
 		while(rs.next()){
@@ -54,9 +56,28 @@ public class RepositorioUsuario implements InterfaceUsuario{
 			u.setCodigo(rs.getInt("codigo"));
 			u.setNome(rs.getString("nome"));
 			u.setLoginName(rs.getString("login"));
+			u.setStatus(rs.getInt("status"));
+			u.setPrivilegio(rs.getInt("pCodigo"));
+			u.setPrivilegioDescricao(rs.getString("descricao"));
 			listaUsuario.add(u);
 		}
 		
 		return listaUsuario;
+	}
+
+	public Usuario pesquisarPorCodigo(String codigo) throws ClassNotFoundException, SQLException {
+		Usuario u = new Usuario();
+		Connection con = Conexao.conectarBanco();
+		PreparedStatement pstmt = con.prepareStatement("select * from usuarios where codigo = ?");
+		pstmt.setString(1, codigo);
+
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()){
+			u.setLoginName(rs.getString("login"));
+			u.setSenha(rs.getString("senha"));
+			u.setPrivilegio(rs.getInt("privilegio"));
+			u.setStatus(rs.getInt("status"));
+		}
+		return u;
 	}
 }

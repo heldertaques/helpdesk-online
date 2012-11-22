@@ -6,6 +6,7 @@ public class Usuario {
 	private String loginName;
 	private String senha;
 	private int privilegio;
+	private String privilegioDescricao;
 	private int status;
 	
 	public int getCodigo() {
@@ -37,6 +38,12 @@ public class Usuario {
 	}
 	public void setPrivilegio(int privilegio) {
 		this.privilegio = privilegio;
+	}
+	public String getPrivilegioDescricao() {
+		return privilegioDescricao;
+	}
+	public void setPrivilegioDescricao(String privilegioDescricao) {
+		this.privilegioDescricao = privilegioDescricao;
 	}
 	public int getStatus() {
 		return status;
