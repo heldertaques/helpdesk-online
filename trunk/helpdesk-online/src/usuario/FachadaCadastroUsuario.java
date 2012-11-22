@@ -36,5 +36,8 @@ public class FachadaCadastroUsuario {
 	public Collection<Usuario> pesquisarTodosUsuarios() throws ClassNotFoundException, SQLException{
 		return cadUsuario.pesquisarTodosUsuarios();
 	}
+	public Usuario pesquisarPorCodigo(String codigo) throws ClassNotFoundException, SQLException{
+		return cadUsuario.pesquisarPorCodigo(codigo);
+	}
 
 }

@@ -23,4 +23,7 @@ public class CadastroUsuario {
 	public Collection<Usuario> pesquisarTodosUsuarios() throws ClassNotFoundException, SQLException{
 		return repositorioUsuario.pesquisarTodosUsuarios();
 	}
+	public Usuario pesquisarPorCodigo(String codigo) throws ClassNotFoundException, SQLException{
+		return repositorioUsuario.pesquisarPorCodigo(codigo);
+	}
 }
