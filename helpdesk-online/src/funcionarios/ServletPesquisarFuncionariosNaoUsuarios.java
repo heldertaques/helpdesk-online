@@ -24,12 +24,16 @@ public class ServletPesquisarFuncionariosNaoUsuarios extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Collection<Funcionario> listaFunc = (Collection<Funcionario>) new  LinkedList<Funcionario>();
+	
 		Fachada_Func ff = new Fachada_Func();
 		
 		  try {  
+			
 			listaFunc = ff.UsuariosNaoCadastrado();
+			
 			request.getSession().setAttribute("listaFuncionarios", listaFunc);
 			response.sendRedirect("FuncionariosCadastrados.jsp");
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace( );
 		} catch (SQLException e) {

@@ -7,21 +7,22 @@ import javax.swing.JOptionPane;
 public class Executar_Func {
 
 	
-	
 	public static void main(String[] args) {
 	
 	Fachada_Func f = new Fachada_Func();
 	
 	try {
 		
-	//f.inserir("carlos", "87788291", "rua do arame", "operador", "m", "34251618192", "ytytytyty", "abreu", "centro");
+	//f.inserir("carlos", "87788291", "rua do arame","kkkkkk","m", "34251618192", "ytytytyty", "abreu", "centro");
 	
-	//listar(f.todos());
-	//f.editarFuncionario(nome, telefone, endereco, funcao, sexo, cpf, email, cidade, bairro)
-	//f.excluir("3349");
+	listar(f.todos());
 	
-	System.out.println("------------------------------------");
-	System.out.println(f.pesquisar("1006"));
+	//System.out.println(f.pesquisar("anne").getNome());
+	
+	//f.excluir("carlos");
+	
+	//System.out.println(f.pesquisar("carlos").getNome());
+	
 	
 	} catch (Exception e) {
 		JOptionPane.showMessageDialog(null, e.getMessage());
@@ -34,7 +35,7 @@ public class Executar_Func {
 		
 		for (Funcionario funcionario : todos) {
 			
-			System.out.println(funcionario.getMatricula());
+		    System.out.println(funcionario.getMatricula());
 			System.out.println(funcionario.getNome());
 			System.out.println(funcionario.getTelefone());
 			System.out.println(funcionario.getEndereco());

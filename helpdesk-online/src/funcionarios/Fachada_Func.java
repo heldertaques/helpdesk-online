@@ -1,6 +1,7 @@
 package funcionarios;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import exception.Funcionario_nao_cadastrado;
@@ -14,13 +15,15 @@ public class Fachada_Func {
 	
 	public void inserir(String nome,String telefone, String endereco,String funcao,String sexo, String cpf,String email,String cidade,String bairro) throws Exception{
 		
+		int a = Integer.parseInt(funcao);
+		
 		Funcionario func = new Funcionario();
 		
 		//func.setMatricula(matricula);
 		func.setNome(nome);
 		func.setTelefone(telefone);
 		func.setEndereco(endereco);
-		func.setFuncao(funcao);
+		func.setFuncao(a);
 		func.setSexo(sexo);
 		func.setCpf(cpf);
 		func.setEmail(email);
@@ -33,14 +36,13 @@ public class Fachada_Func {
 	
 	
 
-	public Funcionario pesquisar(String matricula) throws Matricula_nao_encontrada, Funcionario_nao_cadastrado, ClassNotFoundException, SQLException{
-
-		return c.pesquisar(matricula);
+	public Funcionario pesquisar(String nome) throws Matricula_nao_encontrada, Funcionario_nao_cadastrado, ClassNotFoundException, SQLException{
+		return c.pesquisar(nome);
 		
 	}
 	
-	public void excluir(String matricula) throws Matricula_nao_encontrada, Funcionario_nao_cadastrado, ClassNotFoundException, SQLException {
-		c.excluir(matricula);
+	public void excluir(String nome) throws Matricula_nao_encontrada, Funcionario_nao_cadastrado, ClassNotFoundException, SQLException {
+		c.excluir(nome);
 	}
 	
 	public  Collection<Funcionario> todos() throws ClassNotFoundException, SQLException{
@@ -48,23 +50,26 @@ public class Fachada_Func {
 		
 	}
 
-	public void editarFuncionario( String nome,String telefone, String endereco,String funcao,String sexo, String cpf,String email,String cidade,String bairro) throws ClassNotFoundException, SQLException, Matricula_nao_encontrada, Funcionario_nao_cadastrado
+	public void editarFuncionario( String nome,String telefone, String endereco,String funcao,String sexo, String cpf,String email,String cidade,String bairro) throws Exception
 		
 			{
 
+		int a = Integer.parseInt(funcao);
+		
 		Funcionario func = new Funcionario();
 		try {
 			//func.setMatricula(matricula);
 			func.setNome(nome);
 			func.setTelefone(telefone);
 			func.setEndereco(endereco);
-			func.setFuncao(funcao);
+			func.setFuncao(a);
 			func.setSexo(sexo);
 			func.setCpf(cpf);
 			func.setEmail(email);
 			func.setCidade(cidade);
 			func.setBairro(bairro);
 			c.editar(func);
+			
 		} catch (NumberFormatException e) {
 					
 		}
@@ -75,5 +80,11 @@ public class Fachada_Func {
 	{
 		return c.UsuariosNaoCadastrados();
 	}
+	public ArrayList<Funcionario> listarTodosFuncionarios()
+			throws SQLException, ClassNotFoundException {
+	
+		return c.listarTodosFuncionarios();
+	}		
+
 
 }
