@@ -40,7 +40,7 @@ public class ServletCadastroFunc extends HttpServlet {
 					         request.getParameter("endereco"),request.getParameter("funcao"),request.getParameter("sexo"),
 					         request.getParameter("cpf"),request.getParameter("email"),request.getParameter("cidade"),
 					         request.getParameter("bairro"));
-			response.sendRedirect("FCadastrado.jsp?msg=Cadastrado com Sucesso");
+			response.sendRedirect("Principal.jsp?msg=Cadastrado com Sucesso");
 			
 		} catch (ClassNotFoundException e) {
 			
