@@ -1,6 +1,7 @@
 package funcionarios;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 
@@ -33,12 +34,12 @@ public class Cadastro_Func {
 	}
 	
 
-	public Funcionario pesquisar(String matricula) throws Matricula_nao_encontrada, Funcionario_nao_cadastrado, ClassNotFoundException, SQLException {
+	public Funcionario pesquisar(String nome) throws Matricula_nao_encontrada, Funcionario_nao_cadastrado, ClassNotFoundException, SQLException {
 		
       
-		Funcionario func = this.I.pesquisar(matricula);
+		Funcionario func = this.I.pesquisar(nome);
 	
-		if(matricula.trim().equals("")){
+		if(nome.trim().equals("")){
 			throw new Matricula_nao_encontrada();
 			
 		}else if(func == null){
@@ -55,22 +56,22 @@ public class Cadastro_Func {
 		//return null;
 	
 
-	public void excluir(String matricula) throws Matricula_nao_encontrada, Funcionario_nao_cadastrado, ClassNotFoundException, SQLException {
+	public void excluir(String nome) throws Matricula_nao_encontrada, Funcionario_nao_cadastrado, ClassNotFoundException, SQLException {
 
 		
-		if(matricula.trim().equals("")){
+		if(nome.trim().equals("")){
 
 			
 			throw new Matricula_nao_encontrada();
 			
 
-		}else if (pesquisar(matricula) == null){
+		}else if (pesquisar(nome) == null){
 
 			
 			throw new Matricula_nao_encontrada();
 
 		}else{
-			I.excluir(matricula);
+			I.excluir(nome);
 		}
 	}
 	
@@ -81,9 +82,9 @@ public class Cadastro_Func {
 	
 	public void editar(Funcionario func) throws ClassNotFoundException, SQLException, Matricula_nao_encontrada, Funcionario_nao_cadastrado{
 		
-		if(pesquisar(func.getMatricula()) == null){
+		if(pesquisar(func.getNome()) == null){
 		   throw new Matricula_nao_encontrada();
-		}else if(func.getMatricula().trim().isEmpty()){
+		}else if(func.getNome().trim().isEmpty()){
 			throw new Matricula_nao_encontrada();
 		}else{
 			I.editar(func);
@@ -94,9 +95,18 @@ public class Cadastro_Func {
 	public Collection<Funcionario> UsuariosNaoCadastrados() throws ClassNotFoundException, SQLException
 	{
 		Collection<Funcionario> listaFunc = new LinkedList<Funcionario>();
+		
 		listaFunc = I.UsuariosNaoCadastrado();
+		
 		return listaFunc;
 	}
+	
+	public ArrayList<Funcionario> listarTodosFuncionarios()
+			throws SQLException, ClassNotFoundException {
+	
+		return I.listarTodosFuncionarios();
+	}		
+
 }
 
 

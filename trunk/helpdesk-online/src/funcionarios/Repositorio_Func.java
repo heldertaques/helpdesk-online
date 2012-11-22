@@ -1,12 +1,14 @@
 package funcionarios;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 
 public class Repositorio_Func implements Irepositorio {
 	
-	private static Collection<Funcionario> lista  = new LinkedList<Funcionario>();
+//	private static Collection<Funcionario> lista  = new LinkedList<Funcionario>();
+	private static ArrayList<Funcionario> lista = new ArrayList<Funcionario>();
 	
 	
 	public void inserir(Funcionario func) {
@@ -14,13 +16,14 @@ public class Repositorio_Func implements Irepositorio {
 		
 	}
 
-	public Funcionario pesquisar(String matricula) {
+	public Funcionario pesquisar(String nome) {
+	
 		
 		Funcionario func = new Funcionario();
 		
-		for (Funcionario funcs :this.lista) {
-			if(funcs.getMatricula().equals(matricula)){
-				func = funcs;
+		for (Funcionario f :this.lista) {
+			if(f.getNome().equals(nome)){
+				func = f;
 				break;
 			}
 		}
@@ -28,11 +31,11 @@ public class Repositorio_Func implements Irepositorio {
 	}
 
 	
-	public void excluir(String matricula) {
+	public void excluir(String nome) {
 		
-		Funcionario funcs = pesquisar(matricula);
+		Funcionario func = pesquisar(nome);
 		
-		this.lista.remove(funcs);
+		this.lista.remove(func);
 		
 		
 	}
@@ -44,8 +47,8 @@ public class Repositorio_Func implements Irepositorio {
 
 	public void editar(Funcionario func) throws ClassNotFoundException,SQLException {
 		
-			Funcionario funcionario = pesquisar(func.getMatricula());
-			((LinkedList<Funcionario>) this.lista).set(((LinkedList<Funcionario>) this.lista).indexOf(funcionario), func);
+			Funcionario funcionario = pesquisar(func.getNome());
+			this.lista.set(this.lista.indexOf(funcionario), func);
 		}
 		
 			
@@ -59,9 +62,16 @@ public class Repositorio_Func implements Irepositorio {
 	
 	//função que procura o indice do usuario
 	
-		public int indexUsuario(String matricula){
+		public int indexUsuario(String nome){
 			
-			Funcionario func = pesquisar(matricula);
-			return ((LinkedList<Funcionario>) this.lista).indexOf(func);
+			Funcionario func = pesquisar(nome);
+			return this.lista.indexOf(func);
+		}
+
+		
+		public ArrayList<Funcionario> listarTodosFuncionarios()
+				throws SQLException, ClassNotFoundException {
+		
+			return this.lista;
 		}		
 }

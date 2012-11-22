@@ -6,13 +6,21 @@ public class Funcionario {
 	private String nome;
 	private String telefone;
 	private String endereco;
-	private String funcao;
+	private int funcao;
 	private String sexo;
 	private String cpf;
 	private String email;
 	private String cidade;
 	private String bairro;
 	
+	
+	
+	public int getFuncao() {
+		return funcao;
+	}
+	public void setFuncao(int funcao) {
+		this.funcao = funcao;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -37,12 +45,8 @@ public class Funcionario {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-	public String getFuncao() {
-		return funcao;
-	}
-	public void setFuncao(String funcao) {
-		this.funcao = funcao;
-	}
+	
+	
 	public String getSexo() {
 		return sexo;
 	}
