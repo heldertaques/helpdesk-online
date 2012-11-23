@@ -14,12 +14,11 @@
 	<tr>
 		<td width="50px">Código</td>   <td width="300px">Nome</td>
 	</tr>
+	<c:forEach items="${listaF}" var="func">
 		<tr>
-			<c:forEach items="${listaF}" var="func">
 					<td>${func.matricula} </td>	<td>${func.nome} </td>
-			</c:forEach>
-		
 		</tr>
+		</c:forEach>
 </table>
 
 </body>
