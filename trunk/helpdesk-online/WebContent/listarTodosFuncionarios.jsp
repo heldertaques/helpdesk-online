@@ -8,8 +8,8 @@
 <title>Lista de Funcionarios Cadastrados</title>
 <link href="menu_assets/styles.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
+<jsp:include page="Menu.jsp"></jsp:include>
 <table border="1px">
 	<tr>
 		<td width="50px">Código</td>   <td width="300px">Nome</td>
