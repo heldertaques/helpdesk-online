@@ -112,7 +112,7 @@ public class Repositorio_Banco implements Irepositorio {
 		
 		Connection con = Conexao.conectarBanco(); 
 		
-		String sql = "update  funcionarios set nome=?,telefone=?,endereco=?,cd_codigo=?,sexor =?,cpf =?,email=?,cidade=?,bairro=? where matricula = ?";
+		String sql = "update  funcionarios set nome=?,telefone=?,endereco=?,cd_codigo=?,sexor =?,cpf =?,email=?,cidade=?,bairro=? where nome = ?";
 			
 			PreparedStatement ps = con.prepareStatement(sql);
 			
