@@ -100,7 +100,6 @@
     <servlet-name>PesquisarTodosUsuarios</servlet-name>
     <url-pattern>/PesquisarTodosUsuarios</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>ServletListarFuncionarios</display-name>
@@ -111,5 +110,14 @@
     <servlet-name>ServletListarFuncionarios</servlet-name>
     <url-pattern>/ServletListarFuncionarios</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <description></description>
+    <display-name>ServletAlterarFuncionarios</display-name>
+    <servlet-name>ServletAlterarFuncionarios</servlet-name>
+    <servlet-class>funcionarios.ServletAlterarFuncionarios</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAlterarFuncionarios</servlet-name>
+    <url-pattern>/ServletAlterarFuncionarios</url-pattern>
+  </servlet-mapping>
 </web-app>
