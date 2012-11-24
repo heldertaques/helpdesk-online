@@ -28,6 +28,7 @@ public class ServletAlterarFuncionarios extends HttpServlet {
 			         request.getParameter("endereco"),request.getParameter("funcao"),request.getParameter("sexo"),
 			         request.getParameter("cpf"),request.getParameter("email"),request.getParameter("cidade"),
 			         request.getParameter("bairro"));
+			
 			response.sendRedirect("AlterarFuncionario.jsp");
 
 			

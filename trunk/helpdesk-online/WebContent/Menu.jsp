@@ -13,7 +13,7 @@
          <li><a href='PesquisarTodosCargos'><span>Cadastrar Funcionarios</span></a></li>
          <li><a href='ServletPesquisarFuncionariosNaoUsuarios'><span>Cadastrar Usuário</span></a></li>
          <li><a href='PesquisarProximoCodCargo'><span>Cadastrar Cargo</span></a></li>
-         <li><a href='ServletAlterarFuncionarios'><span>Alterar Funcionários</span></a></li>
+         <li><a href='ServletListarFuncionarios'><span>Alterar Funcionários</span></a></li>
          <li><a href='PesquisarTodosUsuarios'><span>Alterar Usuário</span></a></li>
          <li><a href='ServletListarFuncionarios'><span>Listar os Funcionários</span></a></li>
       </ul>
