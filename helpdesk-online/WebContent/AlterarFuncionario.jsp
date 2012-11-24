@@ -16,32 +16,33 @@
 	}
 </script>
 
-<form action="CadastroFunc"method="post">
+<form action="ServletAlterarFuncionarios" method="post">
 <div align="left">
 
-<h1><div align="center">CADASTRO DE FUNCIONÁRIO</div></h1><br>   
-<b>NOME:</b><input type="text" name = "nome" size="60">
-<b>SEXO:</b><input type="radio" name="sexo" value="M" ><b>M</b>
-<input type="radio" name="sexo" value="F"><b> F</b> <br><br>
+<h1><div align="center">Alterar Funcionários</div></h1><br><br>
+<b>NOME: </b><input type="text" name = "nome" size="60" value ="${param.nome} " >
+<b>SEXO:</b><input type="radio" name="sexo" value="${param.sexo}" value="masculino" ><b>M</b>
+<input type="radio" name="sexo" value="feminino"><b> F</b> <br><br>
+<b>CARGO:</b><select name="funcao" value="${param.cargo}">
 
-	<b>CARGO:</b><select name="funcao"><br><br><br>
 <c:forEach items="${listaCargo}" var="cargo">
 		<option value="${cargo.codigo}">${cargo.descricao}</option>
 	</c:forEach>
 </select>
 
-<b>CPF:     </b><input type="text" name = "cpf"size="40"><br><br>
-<b>EMAIL:   </b><input type="text" name = "email"size="60"><br><br>
-<b>TELEFONE:</b><input type="text" name = "telefone"><br><br>
-<b>ENDEREÇO:</b><input type="text" name = "endereco"size="60"><br><br>
-<b>CIDADE:  </b><input type="text" name = "cidade"size="60"><br>
-<br><b>BAIRRO:  </b><input type="text" name = "bairro"size ="60"><br><br>
+<b>CPF:     </b><input type="text" name = "cpf"size="40" value="${param.cpf} "><br><br>
+<b>EMAIL:   </b><input type="text" name = "email"size="60" value="${param.email}"><br><br>
+<b>TELEFONE:</b><input type="text" name = "telefone" value="${param.telefone}"><br><br>
+<b>ENDEREÇO:</b><input type="text" name = "endereco"size="60" value="${param.endereco}"><br><br>
+<b>CIDADE:  </b><input type="text" name = "cidade"size="60" value="${param.cidade}"><br><br>
+<b>BAIRRO:  </b><input type="text" name = "bairro" size="60" value="${param.bairro}"><br><br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<b></b><input type="submit" value="Enviar Cadastro"> 
+<input type="submit" value="Enviar Cadastro"> 
 <b><input type="reset" value="Cancelar" onclick="cancelarCadastro()"></b>
 </div>
+<input type="text" value="${param.matricula}" name="matricula" style="display: none;">
 </form>
 
 </body>

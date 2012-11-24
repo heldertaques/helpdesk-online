@@ -13,13 +13,18 @@ public class Executar_Func {
 	
 	try {
 		
-	//f.inserir("carlos", "87788291", "rua do arame","kkkkkk","m", "34251618192", "ytytytyty", "abreu", "centro");
+	f.inserir("Luiz", "444444", "rua do arame","g","m", "3425", "vvvvvv", "abreu", "centro");
 	
 	listar(f.todos());
 	
-	//System.out.println(f.pesquisar("anne").getNome());
-	
+	//System.out.println(f.pesquisar("carlos").getNome());
+	//System.out.println("editando");
+	//f.editarFuncionario("carlos", "8", "r","k","f", "3", "y", "a", "c");
+	System.out.println("listando");
+	//listar(f.todos());
+	//System.out.println("excluíndo");
 	//f.excluir("carlos");
+	
 	
 	//System.out.println(f.pesquisar("carlos").getNome());
 	

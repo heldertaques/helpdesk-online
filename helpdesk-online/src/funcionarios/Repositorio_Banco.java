@@ -27,7 +27,7 @@ public class Repositorio_Banco implements Irepositorio {
 		ps.setString(1,func.getNome());
 		ps.setString(2, func.getTelefone());
 		ps.setString(3, func.getEndereco());
-		ps.setInt(4,func.getFuncao());
+		ps.setInt(4,(func.getFuncao()));
 		ps.setString(5, func.getSexo());
 		ps.setString(6, func.getCpf());
 		ps.setString(7, func.getEmail());
@@ -119,7 +119,7 @@ public class Repositorio_Banco implements Irepositorio {
 			ps.setString(1, func.getNome());
 			ps.setString(2, func.getTelefone());
 			ps.setString(3, func.getEndereco());
-			ps.setInt(4,func.getFuncao());
+			ps.setInt(4,(func.getFuncao()));
 			ps.setString(5, func.getSexo());
 			ps.setString(6, func.getCpf());
 			ps.setString(7, func.getEmail());

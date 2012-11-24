@@ -8,18 +8,24 @@
 <title>Lista de Funcionarios Cadastrados</title>
 <link href="menu_assets/styles.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body background="http://187.45.214.201/~trigueir/wp-content/uploads/2011/07/help_desk.jpg">
 <jsp:include page="Menu.jsp"></jsp:include>
 <table border="1px">
 	<tr>
 		<td width="50px">Código</td>   <td width="300px">Nome</td>
 	</tr>
-	<c:forEach items="${listaF}" var="func">
-		<tr>
-					<td>${func.matricula} </td>	<td>${func.nome} </td>
-		</tr>
+		<c:forEach items="${listaF}" var="func">
+	<tr>
+        <td><a href="AlterarFuncionario.jsp?matricula=${func.matricula}&nome=${func.nome}&sexo=${func.sexo}
+                     &cargo=${fun.cargo}&cpf=${func.cpf}&email=${func.email}&telefone=${func.telefone}&endereco=${func.endereco}
+                     &cidade=${func.cidade}&bairro=${func.bairro}">${func.matricula}</a></td>	<td>${func.nome} </td>
+    </tr>
 		</c:forEach>
-</table>
+		
+</table><br><br>
 
 </body>
 </html>
+
+
+

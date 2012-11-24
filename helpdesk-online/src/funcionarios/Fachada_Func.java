@@ -50,7 +50,7 @@ public class Fachada_Func {
 		
 	}
 
-	public void editarFuncionario( String nome,String telefone, String endereco,String funcao,String sexo, String cpf,String email,String cidade,String bairro) throws Exception
+	public void editarFuncionario(String matricula, String nome,String telefone, String endereco,String funcao,String sexo, String cpf,String email,String cidade,String bairro) throws Exception
 		
 			{
 
@@ -58,7 +58,7 @@ public class Fachada_Func {
 		
 		Funcionario func = new Funcionario();
 		try {
-			//func.setMatricula(matricula);
+			func.setMatricula(matricula);
 			func.setNome(nome);
 			func.setTelefone(telefone);
 			func.setEndereco(endereco);

@@ -37,7 +37,7 @@ public class ServletListarFuncionarios extends HttpServlet {
 			  
 			request.getSession().setAttribute("listaF", listaFunc);
 			response.sendRedirect("listarTodosFuncionarios.jsp");
-			System.out.println(listaFunc.size());
+			//System.out.println(listaFunc.size());
 			
 		} catch (ClassNotFoundException e) {
 			//pagina = "erro.jsp";
