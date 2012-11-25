@@ -1,4 +1,4 @@
-package ocorrencia;
+package ocorrencia.tipo;
 
 import java.sql.Time;
 
