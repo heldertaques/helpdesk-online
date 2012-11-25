@@ -1,4 +1,4 @@
-package cargo;
+package funcionarios;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -10,41 +10,47 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ServletPesquisarTodosCargos extends HttpServlet {
-	
+public class ServletListarFuncionariosParaAlteracao extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public ServletPesquisarTodosCargos() {
+    public ServletListarFuncionariosParaAlteracao() {
         super();
+
     }
 
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+	doPost(request, response);	
+	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		FachadaCargo fachadaCargo = new FachadaCargo();
+
 		
-		Collection<Cargo> listaCargo = new LinkedList<Cargo>();
+		Fachada_Func lista = new Fachada_Func();
+		Collection<Funcionario> listaFunc = new LinkedList<Funcionario>();
+		 
 		try {
-			listaCargo = fachadaCargo.pesquisarTodosCargos();
-	
-			/*for (Iterator<Cargo> it = listaCargo.iterator(); it.hasNext();){
-				System.out.println(it.next().getCodigo());
-				System.out.println(it.next().getDescricao());
-			}*/
 			
-			request.getSession().setAttribute("listaCargo", listaCargo);
-			//response.sendRedirect("CadastroFuncionario.jsp");
-			System.out.println(listaCargo.size());
-			response.sendRedirect("AlterarFuncionario.jsp");
-			
+			listaFunc = lista.todos();
+			  
+			request.getSession().setAttribute("listaF", listaFunc);
+			response.sendRedirect("ListaDeFuncionariosParaAlteracao.jsp");
+			//System.out.println(listaFunc.size());
 			
 		} catch (ClassNotFoundException e) {
+			//pagina = "erro.jsp";
+			//request.setAttribute("msg",e.getMessage() );
+
 			e.printStackTrace();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			//pagina = "erro.jsp";
+			//request.setAttribute("msg",e.getMessage() );
 		}
+			
+		//response.sendRedirect(pagina);
+
+
 	}
 
 }

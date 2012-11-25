@@ -24,12 +24,11 @@ public class FachadaCadastroUsuario {
 		u = cadUsuario.pesquisarPorLogin(login,senha);
 		return u;
 	}
-	public void alterarUsuario(String codigo, String login, String privilegio, String senha, String status){
+	public void alterarUsuario(String codigo, String login, String privilegio, String status){
 		Usuario u = new Usuario();
 		u.setCodigo(Integer.parseInt(codigo));
 		u.setLoginName(login);
 		u.setPrivilegio(Integer.parseInt(privilegio));
-		u.setSenha(senha);
 		u.setStatus(Integer.parseInt(status));
 		cadUsuario.alterarUsuario(u);
 	}

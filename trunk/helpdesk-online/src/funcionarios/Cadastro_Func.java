@@ -9,9 +9,6 @@ import java.util.LinkedList;
 import exception.Funcionario_nao_cadastrado;
 import exception.Matricula_nao_encontrada;
 
-import exception.Matricula_nao_encontrada;
-
-import exception.Matricula_vazia;
 import exception.Nome_Vazio;
 
 public class Cadastro_Func {

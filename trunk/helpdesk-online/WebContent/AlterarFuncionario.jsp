@@ -8,41 +8,102 @@
 <title>Cadastro de Funcionários</title>
 <link href="menu_assets/styles.css" rel="stylesheet" type="text/css">
 </head>
-<body background="http://187.45.214.201/~trigueir/wp-content/uploads/2011/07/help_desk.jpg">
+<body background="http://187.45.214.201/~trigueir/wp-content/uploads/2011/07/help_desk.jpg" onload="pesquisarFuncionarios()" >
 <jsp:include page="Menu.jsp"></jsp:include>
 <script>
+//=============================================================================
+	var xmlHttp = null;
 	function cancelarCadastro(){
 		location.href = "Principal.jsp";
 	}
+//=============================================================================	
+	function GetXmlHttpObject(){
+		var xmlHttp = null;
+		try{
+			// Firefox, Opera 8.0+, Safari
+			xmlHttp = new XMLHttpRequest();
+	  	} catch (e) {
+			// Internet Explorer
+			try{
+	    		xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+		    } catch (e) {
+			    xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+		    }
+	  	}
+		return xmlHttp;
+	}
+//=============================================================================
+	function pesquisarFuncionarios(){
+		xmlHttp = GetXmlHttpObject();
+		if (xmlHttp == null){
+			alert ("Seu browser não suporta AJAX!");
+			return;
+		}
+		var url = "PesquisarFuncionarioPorNome";
+		url = url + "?nome=" + "${param.nome}";
+		xmlHttp.onreadystatechange = preencherCampos;
+		xmlHttp.open("GET", url, true);
+		xmlHttp.send(null);
+
+	}
+//==============================================================================
+	function preencherCampos(){
+		
+    if (xmlHttp.readyState == 4){
+	  if (xmlHttp.status == 200){
+		  var xml = xmlHttp.responseXML;
+          document.getElementById("nome").value = unescape(xml.getElementsByTagName('nome')[0].firstChild.data);
+          document.getElementById("cpf").value = unescape(xml.getElementsByTagName('cpf')[0].firstChild.data);
+          document.getElementById("email").value = unescape(xml.getElementsByTagName('email')[0].firstChild.data);
+          document.getElementById("matricula").value = unescape(xml.getElementsByTagName('matricula')[0].firstChild.data);
+          document.getElementById("telefone").value = unescape(xml.getElementsByTagName('telefone')[0].firstChild.data);
+          document.getElementById("endereco").value = unescape(xml.getElementsByTagName('endereco')[0].firstChild.data);
+          document.getElementById("bairro").value = unescape(xml.getElementsByTagName('bairro')[0].firstChild.data);
+          document.getElementById("cidade").value = unescape(xml.getElementsByTagName('cidade')[0].firstChild.data);
+          if(unescape(xml.getElementsByTagName('sexo')[0].firstChild.data) == 'M' || unescape(xml.getElementsByTagName('sexo')[0].firstChild.data) == 'm'){
+        	  document.getElementById("m").setAttribute("checked", "checked");
+         	}else{
+         		if(unescape(xml.getElementsByTagName('sexo')[0].firstChild.data) == 'F' || unescape(xml.getElementsByTagName('sexo')[0].firstChild.data) == 'f'){
+         			document.getElementById("f").setAttribute("checked", "checked");
+         	}
+         }
+          document.getElementById(unescape(xml.getElementsByTagName('funcao')[0].firstChild.data)).selected = true;
+
+          
+	  }else{
+			alert('Erro na conexão com o servidor.');	
+	  }		
+	}
+}
+
 </script>
 
 <form action="ServletAlterarFuncionarios" method="post">
-<div align="left">
-
-<h1><div align="center">Alterar Funcionários</div></h1><br><br>
-<b>NOME: </b><input type="text" name = "nome" size="60" value ="${param.nome} " >
-<b>SEXO:</b><input type="radio" name="sexo" value="${param.sexo}" value="masculino" ><b>M</b>
-<input type="radio" name="sexo" value="feminino"><b> F</b> <br><br>
-<b>CARGO:</b><select name="funcao" value="${param.cargo}">
-
-<c:forEach items="${listaCargo}" var="cargo">
-		<option value="${cargo.codigo}">${cargo.descricao}</option>
-	</c:forEach>
+<h1>Alterar Funcionários</h1><br><br>
+<b>NOME: </b><input type="text" name = "nome" id="nome" size="60">
+<b>SEXO:</b><input type="radio" name="sexo" id="m">M<b></b>
+<input type="radio" name="sexo" id="f">F<b></b> <br><br>
+<b>CARGO:</b><select name="funcao" id="funcao">
+	<option id="1" value="1">Analista de Suporte</option>
+	<option id="2" value="2">Coordenador de TI</option>
+	<option id="3" value="3">Tecnico de Suporte I</option>
+	<option id="4" value="4">Analista de Incidentes</option>
+	<option id="5" value="5">Supervisor de TI</option>
+	
 </select>
 
-<b>CPF:     </b><input type="text" name = "cpf"size="40" value="${param.cpf} "><br><br>
-<b>EMAIL:   </b><input type="text" name = "email"size="60" value="${param.email}"><br><br>
-<b>TELEFONE:</b><input type="text" name = "telefone" value="${param.telefone}"><br><br>
-<b>ENDEREÇO:</b><input type="text" name = "endereco"size="60" value="${param.endereco}"><br><br>
-<b>CIDADE:  </b><input type="text" name = "cidade"size="60" value="${param.cidade}"><br><br>
-<b>BAIRRO:  </b><input type="text" name = "bairro" size="60" value="${param.bairro}"><br><br>
+<b>CPF:     </b><input type="text" name="cpf" id="cpf" size="40"><br><br>
+<b>EMAIL:   </b><input type="text" name="email" id="email" size="60"><br><br>
+<b>TELEFONE:</b><input type="text" name="telefone" id="telefone"><br><br>
+<b>ENDEREÇO:</b><input type="text" name="endereco" id="endereco" size="60"><br><br>
+<b>CIDADE:  </b><input type="text" name="cidade" id="cidade" size="60"><br><br>
+<b>BAIRRO:  </b><input type="text" name="bairro" id="bairro" size="60"><br><br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="submit" value="Enviar Cadastro"> 
-<b><input type="reset" value="Cancelar" onclick="cancelarCadastro()"></b>
-</div>
-<input type="text" value="${param.matricula}" name="matricula" style="display: none;">
+<b><input type="reset" value="Cancelar" onclick="cancelarCadastro()"> </b>
+<input type="text" name="matricula" id="matricula" style="display: none;">
 </form>
 
 </body>
