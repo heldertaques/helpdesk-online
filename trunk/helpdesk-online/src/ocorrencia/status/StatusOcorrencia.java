@@ -1,4 +1,4 @@
-package ocorrencia;
+package ocorrencia.status;
 
 public class StatusOcorrencia {
 	private int codigo;
