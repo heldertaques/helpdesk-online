@@ -51,7 +51,7 @@ public class Repositorio_Banco implements Irepositorio {
 			
 			func = new Funcionario();
 			
-			func.setMatricula(rs.getString("matricula"));
+			func.setMatricula(String.valueOf(rs.getInt("matricula")));
 			func.setNome(rs.getString("nome"));
 			func.setTelefone(rs.getString("telefone"));
 			func.setEndereco(rs.getString("endereco"));
@@ -112,7 +112,7 @@ public class Repositorio_Banco implements Irepositorio {
 		
 		Connection con = Conexao.conectarBanco(); 
 		
-		String sql = "update  funcionarios set nome=?,telefone=?,endereco=?,cd_codigo=?,sexor =?,cpf =?,email=?,cidade=?,bairro=? where nome = ?";
+		String sql = "update  funcionarios set nome=?,telefone=?,endereco=?,cd_cargo=?,sexo =?,cpf =?,email=?,cidade=?,bairro=? where matricula = ?";
 			
 			PreparedStatement ps = con.prepareStatement(sql);
 			
@@ -125,7 +125,7 @@ public class Repositorio_Banco implements Irepositorio {
 			ps.setString(7, func.getEmail());
 			ps.setString(8, func.getCidade());
 			ps.setString(9, func.getBairro());
-			ps.setString(10, func.getMatricula());		
+			ps.setInt(10, Integer.parseInt(func.getMatricula()));		
 			ps.execute();
 		}
 	

@@ -62,6 +62,10 @@ public class PesquisarFuncionarioPorNome extends HttpServlet {
 			xml = xml + "<cidade>";
 			xml = xml + f.getCidade();
 			xml = xml + "</cidade\n>";
+			xml = xml + "<matricula>";
+			xml = xml + f.getMatricula();
+			xml = xml + "</matricula\n>";
+
 			xml = xml + "</funcionario>\n";
 
 			response.setContentType("text/xml");  

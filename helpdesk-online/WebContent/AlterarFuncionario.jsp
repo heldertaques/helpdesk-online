@@ -62,9 +62,11 @@
           document.getElementById("cidade").value = unescape(xml.getElementsByTagName('cidade')[0].firstChild.data);
           if(unescape(xml.getElementsByTagName('sexo')[0].firstChild.data) == 'M' || unescape(xml.getElementsByTagName('sexo')[0].firstChild.data) == 'm'){
         	  document.getElementById("m").setAttribute("checked", "checked");
+        	  document.getElementById("m").value = "M";
          	}else{
          		if(unescape(xml.getElementsByTagName('sexo')[0].firstChild.data) == 'F' || unescape(xml.getElementsByTagName('sexo')[0].firstChild.data) == 'f'){
          			document.getElementById("f").setAttribute("checked", "checked");
+         			document.getElementById("f").value = "F";
          	}
          }
           document.getElementById(unescape(xml.getElementsByTagName('funcao')[0].firstChild.data)).selected = true;
@@ -75,14 +77,23 @@
 	  }		
 	}
 }
+//==============================================================================
+	function definirSexo(){
+		if (document.getElementById("m").checked == true){
+			document.getElementById("m").value = "M";
+		}
+		if (document.getElementById("f").checked == true){
+			document.getElementById("f").value = "F";
+		} 
 
+}
 </script>
 
 <form action="ServletAlterarFuncionarios" method="post">
 <h1>Alterar Funcionários</h1><br><br>
 <b>NOME: </b><input type="text" name = "nome" id="nome" size="60">
-<b>SEXO:</b><input type="radio" name="sexo" id="m">M<b></b>
-<input type="radio" name="sexo" id="f">F<b></b> <br><br>
+<b>SEXO:</b><input type="radio" name="sexo" id="m" onclick="definirSexo()">M<b></b>
+<input type="radio" name="sexo" id="f" onclick="definirSexo()">F<b></b> <br><br>
 <b>CARGO:</b><select name="funcao" id="funcao">
 	<option id="1" value="1">Analista de Suporte</option>
 	<option id="2" value="2">Coordenador de TI</option>
