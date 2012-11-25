@@ -45,7 +45,7 @@ public class Repositorio_Banco implements Irepositorio {
 		String sql = ("select * from funcionarios where nome = ?");
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, nome);
-		ResultSet rs = ps.getResultSet();
+		ResultSet rs = ps.executeQuery();
 		
 		while(rs.next()){
 			

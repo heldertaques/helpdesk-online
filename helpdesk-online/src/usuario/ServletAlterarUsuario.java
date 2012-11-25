@@ -17,6 +17,8 @@ public class ServletAlterarUsuario extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		FachadaCadastroUsuario fachadaUsuario = new FachadaCadastroUsuario();
+	fachadaUsuario.alterarUsuario(request.getParameter("codigo"), request.getParameter("login"), "privilegio", "status");
 	}
 
 }

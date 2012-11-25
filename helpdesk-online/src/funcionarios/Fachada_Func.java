@@ -6,8 +6,6 @@ import java.util.Collection;
 
 import exception.Funcionario_nao_cadastrado;
 import exception.Matricula_nao_encontrada;
-import exception.Matricula_vazia;
-import exception.Nome_Vazio;
 
 public class Fachada_Func {
 
@@ -50,14 +48,13 @@ public class Fachada_Func {
 		
 	}
 
-	public void editarFuncionario( String nome,String telefone, String endereco,String funcao,String sexo, String cpf,String email,String cidade,String bairro) throws Exception
+	public void editarFuncionario( String nome,String telefone, String endereco,String funcao,String sexo, String cpf,String email,String cidade,String bairro) throws ClassNotFoundException, SQLException, Matricula_nao_encontrada, Funcionario_nao_cadastrado
 		
 			{
 
 		int a = Integer.parseInt(funcao);
 		
 		Funcionario func = new Funcionario();
-		try {
 			//func.setMatricula(matricula);
 			func.setNome(nome);
 			func.setTelefone(telefone);
@@ -70,11 +67,7 @@ public class Fachada_Func {
 			func.setBairro(bairro);
 			c.editar(func);
 			
-		} catch (NumberFormatException e) {
-					
-		}
 	}
-
 
 	public Collection<Funcionario> UsuariosNaoCadastrado() throws ClassNotFoundException, SQLException
 	{

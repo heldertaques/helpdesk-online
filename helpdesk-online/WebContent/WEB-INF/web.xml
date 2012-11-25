@@ -120,4 +120,24 @@
     <servlet-name>ServletAlterarFuncionarios</servlet-name>
     <url-pattern>/ServletAlterarFuncionarios</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListaDeFuncionariosParaAlteracao</display-name>
+    <servlet-name>ListaDeFuncionariosParaAlteracao</servlet-name>
+    <servlet-class>funcionarios.ServletListarFuncionariosParaAlteracao</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListaDeFuncionariosParaAlteracao</servlet-name>
+    <url-pattern>/ListaDeFuncionariosParaAlteracao</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PesquisarFuncionarioPorNome</display-name>
+    <servlet-name>PesquisarFuncionarioPorNome</servlet-name>
+    <servlet-class>funcionarios.PesquisarFuncionarioPorNome</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PesquisarFuncionarioPorNome</servlet-name>
+    <url-pattern>/PesquisarFuncionarioPorNome</url-pattern>
+  </servlet-mapping>
 </web-app>
