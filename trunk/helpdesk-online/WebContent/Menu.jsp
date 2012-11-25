@@ -5,7 +5,7 @@
       <ul>
          <li><a href='#'><span>Inicio</span></a></li>
          <li><a href='#'><span>Abrir Chamado</span></a></li>
-         <li><a href='#'><span>Consultar</span></a></li>
+         <li><a href='#'><span>Consultar Chamado</span></a></li>
       </ul>
    </li>
    <li class='has-sub '><a href='#'><span>Administração</span></a>

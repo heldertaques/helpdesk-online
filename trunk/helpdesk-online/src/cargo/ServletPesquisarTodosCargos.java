@@ -35,9 +35,8 @@ public class ServletPesquisarTodosCargos extends HttpServlet {
 			}*/
 			
 			request.getSession().setAttribute("listaCargo", listaCargo);
-			//response.sendRedirect("CadastroFuncionario.jsp");
-			System.out.println(listaCargo.size());
-			response.sendRedirect("AlterarFuncionario.jsp");
+			response.sendRedirect("CadastroFuncionario.jsp");
+			//response.sendRedirect("AlterarFuncionario.jsp");
 			
 			
 		} catch (ClassNotFoundException e) {
