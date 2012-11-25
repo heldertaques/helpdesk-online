@@ -24,12 +24,12 @@ public class ServletAlterarFuncionarios extends HttpServlet {
 		Fachada_Func alterar = new Fachada_Func();
 		
 		try {
-			alterar.editarFuncionario(request.getParameter("nome"),request.getParameter("telefone"),
+			alterar.editarFuncionario(request.getParameter("matricula"),request.getParameter("nome"),request.getParameter("telefone"),
 			         request.getParameter("endereco"),request.getParameter("funcao"),request.getParameter("sexo"),
 			         request.getParameter("cpf"),request.getParameter("email"),request.getParameter("cidade"),
 			         request.getParameter("bairro"));
 			
-			response.sendRedirect("AlterarFuncionario.jsp");
+			//response.sendRedirect("AlterarFuncionario.jsp");
 
 			
 		} catch (Exception e) {
