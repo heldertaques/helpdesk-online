@@ -80,4 +80,15 @@ public class RepositorioUsuario implements InterfaceUsuario{
 		}
 		return u;
 	}
+
+	public void alterarUsuario(Usuario usuario) throws ClassNotFoundException, SQLException {
+		Connection con = Conexao.conectarBanco();
+		String sql = "update usuarios set login=?, status=?, privilegio=? where codigo = ?";
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, usuario.getLoginName());
+		pstmt.setInt(2, usuario.getStatus());
+		pstmt.setInt(3, usuario.getPrivilegio());
+		pstmt.setInt(4, usuario.getCodigo());
+		pstmt.executeUpdate();
+	}
 }

@@ -1,6 +1,8 @@
 package usuario;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +20,15 @@ public class ServletAlterarUsuario extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		FachadaCadastroUsuario fachadaUsuario = new FachadaCadastroUsuario();
-	fachadaUsuario.alterarUsuario(request.getParameter("codigo"), request.getParameter("login"), "privilegio", "status");
+	try {
+		fachadaUsuario.alterarUsuario(request.getParameter("codigo"), request.getParameter("loginName"), request.getParameter("tipoAcesso"), request.getParameter("status"));
+	} catch (ClassNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	}
 
 }

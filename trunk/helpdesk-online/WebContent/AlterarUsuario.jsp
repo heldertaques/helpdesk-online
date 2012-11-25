@@ -25,7 +25,7 @@
 	}
 </script>
 <h1>Alteração de Usuário</h1>
-<form action="CadastroUsuario" method="post">
+<form action="AlterarUsuario" method="post">
 <table border="2">
 <tr>
 <td bordercolor="transparent">Codigo:<br><input type="text" name="codigo" id="codigo" value="${param.codigo}" readonly="readonly"></td>
@@ -34,11 +34,11 @@
 </tr>
 <tr>
 <td bordercolor="transparent">Status<br>
-<input type="radio" name="ativo" id="ativo" value="1">Ativo
-<input type="radio" name="desativado" id="desativado" value="0">Desativado
+<input type="radio" name="status" id="ativo" value="1">Ativo
+<input type="radio" name="status" id="desativado" value="0">Desativado
 </td>
 <td bordercolor="transparent">Tipo de Acesso<br>
-<select>
+<select name="tipoAcesso">
 	<option value="1" id="1">Administrador</option>
 	<option value="2" id="2">Operador</option>
 	<option value="3" id="3">Usuário</option>

@@ -24,7 +24,7 @@ public class FachadaCadastroUsuario {
 		u = cadUsuario.pesquisarPorLogin(login,senha);
 		return u;
 	}
-	public void alterarUsuario(String codigo, String login, String privilegio, String status){
+	public void alterarUsuario(String codigo, String login, String privilegio, String status) throws ClassNotFoundException, SQLException{
 		Usuario u = new Usuario();
 		u.setCodigo(Integer.parseInt(codigo));
 		u.setLoginName(login);

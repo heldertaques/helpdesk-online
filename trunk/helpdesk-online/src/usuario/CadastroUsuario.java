@@ -16,8 +16,8 @@ public class CadastroUsuario {
 		u = repositorioUsuario.pesquisarPorLogin(login, senha);
 		return u;
 	}
-	public void alterarUsuario(Usuario usuario){
-		
+	public void alterarUsuario(Usuario usuario) throws ClassNotFoundException, SQLException{
+		repositorioUsuario.alterarUsuario(usuario);
 	}
 	
 	public Collection<Usuario> pesquisarTodosUsuarios() throws ClassNotFoundException, SQLException{
