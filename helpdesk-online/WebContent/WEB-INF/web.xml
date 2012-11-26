@@ -150,4 +150,14 @@
     <servlet-name>CadastroOcorrencia</servlet-name>
     <url-pattern>/CadastroOcorrencia</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CadastroEquipamento</display-name>
+    <servlet-name>CadastroEquipamento</servlet-name>
+    <servlet-class>equipamento.ServletCadastroEquipamento</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CadastroEquipamento</servlet-name>
+    <url-pattern>/CadastroEquipamento</url-pattern>
+  </servlet-mapping>
 </web-app>
