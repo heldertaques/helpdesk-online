@@ -140,4 +140,14 @@
     <servlet-name>PesquisarFuncionarioPorNome</servlet-name>
     <url-pattern>/PesquisarFuncionarioPorNome</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CadastroOcorrencia</display-name>
+    <servlet-name>CadastroOcorrencia</servlet-name>
+    <servlet-class>ocorrencia.ServletCadastroOcorrencia</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CadastroOcorrencia</servlet-name>
+    <url-pattern>/CadastroOcorrencia</url-pattern>
+  </servlet-mapping>
 </web-app>
