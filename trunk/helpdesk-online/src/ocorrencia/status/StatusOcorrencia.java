@@ -3,6 +3,7 @@ package ocorrencia.status;
 public class StatusOcorrencia {
 	private int codigo;
 	private String status;
+	
 	public int getCodigo() {
 		return codigo;
 	}
@@ -15,5 +16,4 @@ public class StatusOcorrencia {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
 }
