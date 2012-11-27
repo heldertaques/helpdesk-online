@@ -16,7 +16,7 @@
          <li><a href='#'><span>Cadastrar Setor</span></a></li>
          <li><a href='CadastroEquipamento.jsp'><span>Cadastrar Equipamento</span></a></li>
          <li><a href='CadastroStatusOcorrencia.jsp'><span>Cadastrar Status</span></a></li>
-         <li><a href='#'><span>Cadastrar Tipo de Ocorrência</span></a></li>         
+         <li><a href='CadastroTipoOcorrencia.jsp'><span>Cadastrar Tipo de Ocorrência</span></a></li>         
       </ul>
    </li>
       <li class='has-sub '><a href='#'><span>Manutenção</span></a>

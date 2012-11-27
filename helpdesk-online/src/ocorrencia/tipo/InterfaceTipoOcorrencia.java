@@ -1,5 +1,7 @@
 package ocorrencia.tipo;
 
-public interface InterfaceTipoOcorrencia {
+import java.sql.SQLException;
 
+public interface InterfaceTipoOcorrencia {
+	public void inserirTipoOcorrencia(TipoOcorrencia tipoOcorrencia) throws ClassNotFoundException, SQLException;
 }
