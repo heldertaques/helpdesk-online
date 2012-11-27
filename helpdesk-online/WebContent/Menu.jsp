@@ -15,7 +15,7 @@
          <li><a href='PesquisarProximoCodCargo'><span>Cadastrar Cargo</span></a></li>
          <li><a href='#'><span>Cadastrar Setor</span></a></li>
          <li><a href='CadastroEquipamento.jsp'><span>Cadastrar Equipamento</span></a></li>
-         <li><a href='#'><span>Cadastrar Status</span></a></li>
+         <li><a href='CadastroStatusOcorrencia.jsp'><span>Cadastrar Status</span></a></li>
          <li><a href='#'><span>Cadastrar Tipo de Ocorrência</span></a></li>         
       </ul>
    </li>
