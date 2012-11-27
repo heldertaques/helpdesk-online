@@ -1,5 +1,7 @@
 package equipamento;
 
-public interface InterfaceEquipamento {
+import java.sql.SQLException;
 
+public interface InterfaceEquipamento {
+	public void inserirEquipamento(Equipamento equipamento) throws ClassNotFoundException, SQLException;
 }

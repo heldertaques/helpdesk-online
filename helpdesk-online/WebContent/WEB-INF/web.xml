@@ -160,4 +160,24 @@
     <servlet-name>CadastroEquipamento</servlet-name>
     <url-pattern>/CadastroEquipamento</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CadastroStatus</display-name>
+    <servlet-name>CadastroStatus</servlet-name>
+    <servlet-class>ocorrencia.status.ServletCadastroStatus</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CadastroStatus</servlet-name>
+    <url-pattern>/CadastroStatus</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CadastroTipoOcorrencia</display-name>
+    <servlet-name>CadastroTipoOcorrencia</servlet-name>
+    <servlet-class>ocorrencia.tipo.ServletCadastroTipoOcorrencia</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CadastroTipoOcorrencia</servlet-name>
+    <url-pattern>/CadastroTipoOcorrencia</url-pattern>
+  </servlet-mapping>
 </web-app>

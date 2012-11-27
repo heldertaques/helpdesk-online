@@ -15,7 +15,7 @@
 	}
 </script>
 <h1>Cadastro de Equipamento</h1>
-<form action="CadastroCargo" method="post">
+<form action="CadastroEquipamento" method="post">
 <table border="2">
 <tr>
 <td bordercolor="transparent">Descrição:<br><input type="text" name="desc" id="desc"  style="width: 250px"></td>
