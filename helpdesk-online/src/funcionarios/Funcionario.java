@@ -1,6 +1,8 @@
 package funcionarios;
 
-public class Funcionario {
+import setor.Setor;
+
+public class Funcionario extends Setor{
 	
 	private String matricula;
 	private String nome;
