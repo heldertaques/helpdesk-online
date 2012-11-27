@@ -1,11 +1,9 @@
 package ocorrencia.tipo;
 
-import java.sql.Time;
-
 public class TipoOcorrencia {
 	private int codigo;
 	private String descricao;
-	private Time sla;
+	private String sla;
 
 	public int getCodigo() {
 		return codigo;
@@ -19,10 +17,10 @@ public class TipoOcorrencia {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public Time getSla() {
+	public String getSla() {
 		return sla;
 	}
-	public void setSla(Time sla) {
+	public void setSla(String sla) {
 		this.sla = sla;
 	}
 
