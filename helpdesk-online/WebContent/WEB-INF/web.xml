@@ -180,4 +180,24 @@
     <servlet-name>CadastroTipoOcorrencia</servlet-name>
     <url-pattern>/CadastroTipoOcorrencia</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CadastroSetor</display-name>
+    <servlet-name>CadastroSetor</servlet-name>
+    <servlet-class>setor.ServletCadastroSetor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CadastroSetor</servlet-name>
+    <url-pattern>/CadastroSetor</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PesquisarTodosFuncionarios</display-name>
+    <servlet-name>PesquisarTodosFuncionarios</servlet-name>
+    <servlet-class>funcionarios.ServletPesquisarTodosFuncionarios</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PesquisarTodosFuncionarios</servlet-name>
+    <url-pattern>/PesquisarTodosFuncionarios</url-pattern>
+  </servlet-mapping>
 </web-app>
