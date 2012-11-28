@@ -3,6 +3,8 @@ package usuario;
 import java.sql.SQLException;
 import java.util.Collection;
 
+import usuario.exception.UsuarioSenhaInvalidosException;
+
 public class FachadaCadastroUsuario {
 	CadastroUsuario cadUsuario = new CadastroUsuario();
 	public void inserirUsuario(String codigo, String loginName, String senha, String privilegio, String status) throws ClassNotFoundException, SQLException
@@ -18,10 +20,13 @@ public class FachadaCadastroUsuario {
 		cadUsuario.inserirUsuario(u);
 	}
 	
-	public Usuario pesquisarPorLogin(String login, String senha) throws ClassNotFoundException, SQLException
+	public Usuario pesquisarPorLogin(String login, String senha) throws ClassNotFoundException, SQLException, UsuarioSenhaInvalidosException
 	{
 		Usuario u = new Usuario();
 		u = cadUsuario.pesquisarPorLogin(login,senha);
+		if(u.getLoginName() == null || u.getSenha() == null){
+			throw new UsuarioSenhaInvalidosException();
+		}
 		return u;
 	}
 	public void alterarUsuario(String codigo, String login, String privilegio, String status) throws ClassNotFoundException, SQLException{
