@@ -29,20 +29,26 @@ public class RepositorioUsuario implements InterfaceUsuario{
 	{
 		Usuario u = new Usuario();
 		Connection con = Conexao.conectarBanco();
-		PreparedStatement pstmt = con.prepareStatement("select u.codigo, f.nome,u.login,u.senha,u.status,u.privilegio" +
+		PreparedStatement pstmt = con.prepareStatement("select u.codigo, f.nome,u.login,u.senha,s.codigo as CodSetor," +
+														" s.nome as NomeSetor, u.status,u.privilegio,p.descricao" +
 														" from usuarios u" +
-														" inner join funcionarios f on u.codigo = f.matricula " +
+														" inner join funcionarios f on u.codigo = f.matricula" +
+														" inner join setor s on f.setor = s.codigo" +
+														" inner join privilegio p on u.privilegio = p.codigo" +
 														" where u.login = ? and u.senha = md5(?)");
 		pstmt.setString(1, login);
 		pstmt.setString(2, senha);
 
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()){
-			u.setLoginName(rs.getString("codigo"));
-			u.setLoginName(rs.getString("nome"));
+			u.setCodSetor(rs.getInt("codSetor"));
+			u.setNomeSetor(rs.getString("nomesetor"));
+			u.setCodigo(rs.getInt("codigo"));
+			u.setNome(rs.getString("nome"));
 			u.setLoginName(rs.getString("login"));
 			u.setSenha(rs.getString("senha"));
 			u.setPrivilegio(rs.getInt("privilegio"));
+			u.setPrivilegioDescricao(rs.getString("descricao"));
 			u.setStatus(rs.getInt("status"));
 		}
 		return u;

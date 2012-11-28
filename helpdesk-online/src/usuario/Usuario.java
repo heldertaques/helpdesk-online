@@ -1,6 +1,8 @@
 package usuario;
 
-public class Usuario {
+import setor.Setor;
+
+public class Usuario extends Setor{
 	private int codigo;
 	private String nome;
 	private String loginName;
