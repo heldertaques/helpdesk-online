@@ -23,7 +23,8 @@
       <ul>
          <li><a href='ListaDeFuncionariosParaAlteracao'><span>Alterar Funcionários</span></a></li>
          <li><a href='PesquisarTodosUsuarios'><span>Alterar Usuário</span></a></li>
-         <li><a href='#'><span>Alterar Tipo de Ocorrência</span></a></li>         
+         <li><a href='ListarTipoOcorrencia'><span>Alterar Tipo de Ocorrência</span></a></li>
+         <li><a href='#'><span>Alterar Setor</span></a></li>
          <li><a href='ServletListarFuncionarios'><span>Listar os Funcionários</span></a></li>
       </ul>
    </li>

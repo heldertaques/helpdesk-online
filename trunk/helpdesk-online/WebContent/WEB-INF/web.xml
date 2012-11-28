@@ -200,4 +200,14 @@
     <servlet-name>PesquisarTodosFuncionarios</servlet-name>
     <url-pattern>/PesquisarTodosFuncionarios</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListarTipoOcorrencia</display-name>
+    <servlet-name>ListarTipoOcorrencia</servlet-name>
+    <servlet-class>ocorrencia.tipo.ServletListarTipoOcorrencia</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListarTipoOcorrencia</servlet-name>
+    <url-pattern>/ListarTipoOcorrencia</url-pattern>
+  </servlet-mapping>
 </web-app>
