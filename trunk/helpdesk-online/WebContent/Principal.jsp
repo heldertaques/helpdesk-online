@@ -9,9 +9,17 @@
 <link href="menu_assets/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body background="http://187.45.214.201/~trigueir/wp-content/uploads/2011/07/help_desk.jpg">
-			<c:if test="${empty logado}">
-      			<c:redirect url="Login.jsp"></c:redirect>
-      		</c:if>
+	<c:if test="${empty logado}">
+    	<c:redirect url="Login.jsp"></c:redirect>
+    </c:if>
+<table>
+<tr>
+<td>Usuario Logado:</td>
+<c:forEach items="${logado}" var="usuarioLogado">
+	<td>${usuarioLogado.nome}</td>
+</c:forEach>
+</tr>
+</table>
 <jsp:include page="Menu.jsp"></jsp:include>
 </body>
 </html>
