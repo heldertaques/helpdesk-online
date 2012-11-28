@@ -35,6 +35,15 @@ public class RepositorioTipoOcorrencia implements InterfaceTipoOcorrencia{
 		}
 		return listaTipoOcorrencia;
 	}
+
+	public void alterarTipoOcorrencia(TipoOcorrencia tipoOcorrencia) throws ClassNotFoundException, SQLException {
+		Connection con = Conexao.conectarBanco();
+		PreparedStatement pstmt = con.prepareStatement("update tipo_ocorrencia set descricao=?, sla=? where codigo=?");
+		pstmt.setString(1, tipoOcorrencia.getDescricao());
+		pstmt.setTime(2, Time.valueOf(tipoOcorrencia.getSla()));
+		pstmt.setInt(3, tipoOcorrencia.getCodigo());
+		pstmt.executeUpdate();
+	}
 	
 
 }
