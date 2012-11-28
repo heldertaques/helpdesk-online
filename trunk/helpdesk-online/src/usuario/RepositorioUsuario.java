@@ -29,16 +29,21 @@ public class RepositorioUsuario implements InterfaceUsuario{
 	{
 		Usuario u = new Usuario();
 		Connection con = Conexao.conectarBanco();
-		PreparedStatement pstmt = con.prepareStatement("select * from usuarios where ulogin = ? and usenha = md5(?)");
+		PreparedStatement pstmt = con.prepareStatement("select u.codigo, f.nome,u.login,u.senha,u.status,u.privilegio" +
+														" from usuarios u" +
+														" inner join funcionarios f on u.codigo = f.matricula " +
+														" where u.login = ? and u.senha = md5(?)");
 		pstmt.setString(1, login);
 		pstmt.setString(2, senha);
 
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()){
-			u.setLoginName(rs.getString("ulogin"));
-			u.setSenha(rs.getString("usenha"));
-			u.setPrivilegio(rs.getInt("uprivilegio"));
-			u.setStatus(rs.getInt("ustatus"));
+			u.setLoginName(rs.getString("codigo"));
+			u.setLoginName(rs.getString("nome"));
+			u.setLoginName(rs.getString("login"));
+			u.setSenha(rs.getString("senha"));
+			u.setPrivilegio(rs.getInt("privilegio"));
+			u.setStatus(rs.getInt("status"));
 		}
 		return u;
 		}
