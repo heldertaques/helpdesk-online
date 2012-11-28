@@ -13,7 +13,7 @@
          <li><a href='PesquisarTodosCargos'><span>Cadastrar Funcionarios</span></a></li>
          <li><a href='ServletPesquisarFuncionariosNaoUsuarios'><span>Cadastrar Usuário</span></a></li>
          <li><a href='PesquisarProximoCodCargo'><span>Cadastrar Cargo</span></a></li>
-         <li><a href='#'><span>Cadastrar Setor</span></a></li>
+         <li><a href='CadastroSetor.jsp'><span>Cadastrar Setor</span></a></li>
          <li><a href='CadastroEquipamento.jsp'><span>Cadastrar Equipamento</span></a></li>
          <li><a href='CadastroStatusOcorrencia.jsp'><span>Cadastrar Status</span></a></li>
          <li><a href='CadastroTipoOcorrencia.jsp'><span>Cadastrar Tipo de Ocorrência</span></a></li>         
