@@ -210,4 +210,14 @@
     <servlet-name>ListarTipoOcorrencia</servlet-name>
     <url-pattern>/ListarTipoOcorrencia</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AlterarTipoOcorrencia</display-name>
+    <servlet-name>AlterarTipoOcorrencia</servlet-name>
+    <servlet-class>ocorrencia.tipo.ServletAlterarTipoOcorrencia</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlterarTipoOcorrencia</servlet-name>
+    <url-pattern>/AlterarTipoOcorrencia</url-pattern>
+  </servlet-mapping>
 </web-app>
