@@ -1,6 +1,7 @@
 package ocorrencia.status;
 
 import java.sql.SQLException;
+import java.util.Collection;
 
 import ocorrencia.status.exception.DescricaoStatusOcorrenciaVaziaException;
 
@@ -15,5 +16,7 @@ public class FachadaStatusOcorrencia {
 		
 		cadStatusOcorrencia.inserirStatusOcorrencia(statusOcorrencia);
 	}
-
+	public Collection<StatusOcorrencia> listarStatusOcorrencia() throws ClassNotFoundException, SQLException{
+		return cadStatusOcorrencia.listarStatusOcorrencia();
+	}
 }

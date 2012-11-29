@@ -1,9 +1,6 @@
 <div id='cssmenu'>
-<table border="1">
-<tr>
-<td style="font-size: 18">Usuario Logado:${logado.nome}</td>
-</tr>
-</table>
+Usuario Logado:<input type="text" style="font-size: 18;border: 0;
+				background-color: transparent;color: red;width: 250px" value="${logado.nome}">
 <ul>
    <li><a href='Principal.jsp'><span>Home</span></a></li>
    <li class='has-sub '><a href='#'><span>Ocorrências</span></a>

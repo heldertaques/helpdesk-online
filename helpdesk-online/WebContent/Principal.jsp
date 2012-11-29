@@ -10,6 +10,7 @@
 </head>
 <body background="http://187.45.214.201/~trigueir/wp-content/uploads/2011/07/help_desk.jpg">
 	<c:if test="${empty logado}">
+		<c:out value="Teste"></c:out>
     	<c:redirect url="Login.jsp"></c:redirect>
     </c:if>
 <jsp:include page="Menu.jsp"></jsp:include>
