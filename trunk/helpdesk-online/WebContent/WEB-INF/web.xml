@@ -220,4 +220,14 @@
     <servlet-name>AlterarTipoOcorrencia</servlet-name>
     <url-pattern>/AlterarTipoOcorrencia</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PegarDados</display-name>
+    <servlet-name>PegarDados</servlet-name>
+    <servlet-class>ocorrencia.ServletPegarDados</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PegarDados</servlet-name>
+    <url-pattern>/PegarDados</url-pattern>
+  </servlet-mapping>
 </web-app>
