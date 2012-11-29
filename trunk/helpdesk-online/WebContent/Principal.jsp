@@ -12,14 +12,6 @@
 	<c:if test="${empty logado}">
     	<c:redirect url="Login.jsp"></c:redirect>
     </c:if>
-<table>
-<tr>
-<td>Usuario Logado:</td>
-<c:forEach items="${logado}" var="usuarioLogado">
-	<td>${usuarioLogado.nome}</td>
-</c:forEach>
-</tr>
-</table>
 <jsp:include page="Menu.jsp"></jsp:include>
 </body>
 </html>

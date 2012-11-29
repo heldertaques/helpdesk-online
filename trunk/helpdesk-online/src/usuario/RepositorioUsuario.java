@@ -41,8 +41,8 @@ public class RepositorioUsuario implements InterfaceUsuario{
 
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()){
-			u.setCodSetor(rs.getInt("codSetor"));
-			u.setNomeSetor(rs.getString("nomesetor"));
+			//u.getSetor().setCodSetor(rs.getInt("codSetor"));
+			//u.getSetor().setNomeSetor(rs.getString("nomesetor"));
 			u.setCodigo(rs.getInt("codigo"));
 			u.setNome(rs.getString("nome"));
 			u.setLoginName(rs.getString("login"));

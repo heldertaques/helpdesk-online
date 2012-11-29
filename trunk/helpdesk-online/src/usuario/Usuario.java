@@ -2,11 +2,12 @@ package usuario;
 
 import setor.Setor;
 
-public class Usuario extends Setor{
+public class Usuario {
 	private int codigo;
 	private String nome;
 	private String loginName;
 	private String senha;
+	private Setor setor;
 	private int privilegio;
 	private String privilegioDescricao;
 	private int status;
@@ -34,6 +35,12 @@ public class Usuario extends Setor{
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	public Setor getSetor() {
+		return setor;
+	}
+	public void setSetor(Setor setor) {
+		this.setor = setor;
 	}
 	public int getPrivilegio() {
 		return privilegio;
