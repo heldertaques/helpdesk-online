@@ -27,10 +27,10 @@ Nº do Chamado: <input type="text" readonly="readonly">
 <td>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td>
-Solicitado por: <input type="text" readonly="readonly" size="38">
+Solicitado por: <input type="text" readonly="readonly" size="38" value="${logado.nome}">
 </td>
 <td>
-Setor: <input type="text" readonly="readonly" size="38">
+Setor: <input type="text" readonly="readonly" size="38" value="">
 </td>
 
 </tr>
