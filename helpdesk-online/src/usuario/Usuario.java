@@ -5,6 +5,7 @@ public class Usuario {
 	private String nome;
 	private String loginName;
 	private String senha;
+	private String email;
 	private int codSetor;
 	private String nomeSetor;
 	private int privilegio;
@@ -34,6 +35,12 @@ public class Usuario {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public int getCodSetor() {
 		return codSetor;

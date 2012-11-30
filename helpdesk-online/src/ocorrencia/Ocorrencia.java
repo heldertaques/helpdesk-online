@@ -7,10 +7,13 @@ public class Ocorrencia {
 	private String oc_numero;
 	private String descricao;
 	private int cd_solicitante;
+	private String nomeSolicitante;
 	private int cd_responsavel;
+	private String nomeResponsavel;
 	private int cd_tipo;
 	private int cd_equipamento;
 	private int cd_status;
+	private String status;
 	private Date data_abertura;
 	private Date data_fechamento;
 	private Time idade;
@@ -33,11 +36,23 @@ public class Ocorrencia {
 	public void setCd_solicitante(int cd_solicitante) {
 		this.cd_solicitante = cd_solicitante;
 	}
+	public String getNomeSolicitante() {
+		return nomeSolicitante;
+	}
+	public void setNomeSolicitante(String nomeSolicitante) {
+		this.nomeSolicitante = nomeSolicitante;
+	}
 	public int getCd_responsavel() {
 		return cd_responsavel;
 	}
 	public void setCd_responsavel(int cd_responsavel) {
 		this.cd_responsavel = cd_responsavel;
+	}
+	public String getNomeResponsavel() {
+		return nomeResponsavel;
+	}
+	public void setNomeResponsavel(String nomeResponsavel) {
+		this.nomeResponsavel = nomeResponsavel;
 	}
 	public int getCd_tipo() {
 		return cd_tipo;
@@ -56,6 +71,12 @@ public class Ocorrencia {
 	}
 	public void setCd_status(int cd_status) {
 		this.cd_status = cd_status;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	public Date getData_abertura() {
 		return data_abertura;

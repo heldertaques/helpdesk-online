@@ -105,7 +105,7 @@ Nº do Chamado: <input type="text" readonly="readonly" name="num_ocorrencia" id="
 <td>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td>
-Solicitado por: <input type="text" readonly="readonly" size="38" value="${logado.nome}">
+Solicitado por: <input type="text" readonly="readonly" size="38" value="${logado.nome}" name="solicitante" id="solicitante">
 </td>
 <td>
 Setor: <input type="text" readonly="readonly" size="38" value="${logado.nomeSetor}">
@@ -149,7 +149,8 @@ Descrição do Problema:
 <td align="center" style="width: 180px"><INPUT TYPE="button" style="width: 180px;height: 50px;font-size: 18pt" BORDER="0" value="Cancelar" onclick="cancelar()"></td>
 </tr>
 </table>
-<input type="hidden" name="solicitante" id="solicitante" value="${logado.codigo}">
+<input type="hidden" name="cdsolicitante" id="cdsolicitante" value="${logado.codigo}">
+<input type="text" style="visibility: hidden;" value="${logado.email}" name="email" id="email">
 <select style="width: 110px;visibility: hidden;" name="StatusOcorr" id="StatusOcorr">
 	<option value="1"></option>
 </select>

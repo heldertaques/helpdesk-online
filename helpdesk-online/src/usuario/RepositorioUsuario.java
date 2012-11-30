@@ -29,7 +29,7 @@ public class RepositorioUsuario implements InterfaceUsuario{
 	{
 		Usuario u = new Usuario();
 		Connection con = Conexao.conectarBanco();
-		PreparedStatement pstmt = con.prepareStatement("select u.codigo, f.nome,u.login,u.senha,s.codigo as CodSetor," +
+		PreparedStatement pstmt = con.prepareStatement("select u.codigo, f.nome,f.email,u.login,u.senha,s.codigo as CodSetor," +
 														" s.nome as NomeSetor, u.status,u.privilegio,p.descricao" +
 														" from usuarios u" +
 														" inner join funcionarios f on u.codigo = f.matricula" +
@@ -47,6 +47,7 @@ public class RepositorioUsuario implements InterfaceUsuario{
 			u.setNome(rs.getString("nome"));
 			u.setLoginName(rs.getString("login"));
 			u.setSenha(rs.getString("senha"));
+			u.setEmail(rs.getString("email"));
 			u.setPrivilegio(rs.getInt("privilegio"));
 			u.setPrivilegioDescricao(rs.getString("descricao"));
 			u.setStatus(rs.getInt("status"));

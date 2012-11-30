@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Collection;
+import java.util.LinkedList;
 
 import conexao.Conexao;
 
@@ -31,6 +33,122 @@ public class RepositorioOcorrencia implements InterfaceOcorrencia{
 		pstmt.setInt(5, ocorrencia.getCd_equipamento());
 		pstmt.setInt(6, ocorrencia.getCd_status());
 		pstmt.executeUpdate();
+	}
+
+	public Collection<Ocorrencia> listarTodasOcorrencias() throws ClassNotFoundException, SQLException {
+		Connection con = Conexao.conectarBanco();
+		Statement stmt = con.createStatement();
+		Collection<Ocorrencia> listaOcorrencias = new LinkedList<Ocorrencia>();
+		ResultSet rs = stmt.executeQuery("select o.oc_numero,o.descricao,f.nome,so.status from ocorrencias o" +
+				" inner join usuarios u on o.cd_solicitante = u.codigo inner join funcionarios f on u.codigo = f.matricula" +
+				" inner join status_ocorrencia so on o.cd_status = so.codigo order by oc_numero asc");
+		
+		while(rs.next()){
+			Ocorrencia ocorrencia = new Ocorrencia();
+			ocorrencia.setOc_numero(rs.getString("oc_numero"));
+			ocorrencia.setDescricao(rs.getString("descricao"));
+			ocorrencia.setNomeSolicitante(rs.getString("nome"));
+			ocorrencia.setStatus(rs.getString("status"));
+			listaOcorrencias.add(ocorrencia);
+		}
+		return listaOcorrencias;
+	}
+
+	public Collection<Ocorrencia> listarOcorrenciasNaoIniciadas(String status) throws ClassNotFoundException, SQLException {
+		Connection con = Conexao.conectarBanco();
+		Collection<Ocorrencia> listaOcorrencias = new LinkedList<Ocorrencia>();
+		String sql = "select o.oc_numero,o.descricao,f.nome,so.status from ocorrencias o " +
+					 "inner join usuarios u on o.cd_solicitante = u.codigo " +
+					 "inner join funcionarios f on u.codigo = f.matricula " +
+					 "inner join status_ocorrencia so on o.cd_status = so.codigo " +
+					 "where o.cd_status = ? order by oc_numero asc";
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, Integer.parseInt(status));
+		ResultSet rs = pstmt.executeQuery();
+
+		while(rs.next()){
+			Ocorrencia ocorrencia = new Ocorrencia();
+			ocorrencia.setOc_numero(rs.getString("oc_numero"));
+			ocorrencia.setDescricao(rs.getString("descricao"));
+			ocorrencia.setNomeSolicitante(rs.getString("nome"));
+			ocorrencia.setStatus(rs.getString("status"));
+			listaOcorrencias.add(ocorrencia);
+		}
+		return listaOcorrencias;
+	}
+
+	public Collection<Ocorrencia> listarOcorrenciasPendentes(String status) throws ClassNotFoundException, SQLException {
+		Connection con = Conexao.conectarBanco();
+		Collection<Ocorrencia> listaOcorrencias = new LinkedList<Ocorrencia>();
+		String sql = "select o.oc_numero,o.descricao,f.nome,so.status from ocorrencias o " +
+					 "inner join usuarios u on o.cd_solicitante = u.codigo " +
+					 "inner join funcionarios f on u.codigo = f.matricula " +
+					 "inner join status_ocorrencia so on o.cd_status = so.codigo " +
+					 "where o.cd_status = ? order by oc_numero asc";
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, Integer.parseInt(status));
+		ResultSet rs = pstmt.executeQuery();
+
+		while(rs.next()){
+			Ocorrencia ocorrencia = new Ocorrencia();
+			ocorrencia.setOc_numero(rs.getString("oc_numero"));
+			ocorrencia.setDescricao(rs.getString("descricao"));
+			ocorrencia.setNomeSolicitante(rs.getString("nome"));
+			ocorrencia.setStatus(rs.getString("status"));
+			listaOcorrencias.add(ocorrencia);
+		}
+		return listaOcorrencias;
+	}
+
+	public Collection<Ocorrencia> listarOcorrenciasEmAndamento(String status) throws ClassNotFoundException, SQLException {
+		Connection con = Conexao.conectarBanco();
+		Collection<Ocorrencia> listaOcorrencias = new LinkedList<Ocorrencia>();
+		String sql = "select o.oc_numero,o.descricao,f.nome,so.status from ocorrencias o " +
+					 "inner join usuarios u on o.cd_solicitante = u.codigo " +
+					 "inner join funcionarios f on u.codigo = f.matricula " +
+					 "inner join status_ocorrencia so on o.cd_status = so.codigo " +
+					 "where o.cd_status = ? order by oc_numero asc";
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, Integer.parseInt(status));
+		ResultSet rs = pstmt.executeQuery();
+
+		while(rs.next()){
+			Ocorrencia ocorrencia = new Ocorrencia();
+			ocorrencia.setOc_numero(rs.getString("oc_numero"));
+			ocorrencia.setDescricao(rs.getString("descricao"));
+			ocorrencia.setNomeSolicitante(rs.getString("nome"));
+			ocorrencia.setStatus(rs.getString("status"));
+			listaOcorrencias.add(ocorrencia);
+		}
+		return listaOcorrencias;
+	}
+
+	public Collection<Ocorrencia> listarOcorrenciasFechadas(String status) throws ClassNotFoundException, SQLException {
+		Connection con = Conexao.conectarBanco();
+		Collection<Ocorrencia> listaOcorrencias = new LinkedList<Ocorrencia>();
+		String sql = "select o.oc_numero,o.descricao,f.nome,so.status from ocorrencias o " +
+					 "inner join usuarios u on o.cd_solicitante = u.codigo " +
+					 "inner join funcionarios f on u.codigo = f.matricula " +
+					 "inner join status_ocorrencia so on o.cd_status = so.codigo " +
+					 "where o.cd_status = ? order by oc_numero asc";
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, Integer.parseInt(status));
+		ResultSet rs = pstmt.executeQuery();
+
+		while(rs.next()){
+			Ocorrencia ocorrencia = new Ocorrencia();
+			ocorrencia.setOc_numero(rs.getString("oc_numero"));
+			ocorrencia.setDescricao(rs.getString("descricao"));
+			ocorrencia.setNomeSolicitante(rs.getString("nome"));
+			ocorrencia.setStatus(rs.getString("status"));
+			listaOcorrencias.add(ocorrencia);
+		}
+		return listaOcorrencias;
+	}
+
+	public Ocorrencia pesquisarOcorrenciaPorCodigo(String codigo) throws ClassNotFoundException, SQLException {
+		Connection con = Conexao.conectarBanco();
+		return null;
 	}
 
 }
