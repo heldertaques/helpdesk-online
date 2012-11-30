@@ -39,10 +39,11 @@
 			alert ("Seu browser não suporta AJAX!");
 			return;
 		}
-		var url = "PegarDados";
-		//url = url + "?nome=" + "${param.nome}";
+		var url = "PesquisarPorCodigo";
+		url = url + "?oc_num=" + "${param.oc_numero}";
+		alert(url);
 		xmlHttp.onreadystatechange = preencherCampos;
-		xmlHttp.open("GET", url, false);
+		xmlHttp.open("GET", url, true);
 		xmlHttp.send(null);
 
 	}
@@ -105,10 +106,10 @@ Nº do Chamado: <input type="text" readonly="readonly" name="num_ocorrencia" id="
 <td>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td>
-Solicitado por: <input type="text" readonly="readonly" size="38" value="${logado.nome}" name="solicitante" id="solicitante">
+Solicitado por: <input type="text" readonly="readonly" size="38" name="solicitante" id="solicitante">
 </td>
 <td>
-Setor: <input type="text" readonly="readonly" size="38" value="${logado.nomeSetor}">
+Setor: <input type="text" readonly="readonly" size="38">
 </td>
 
 </tr>

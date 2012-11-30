@@ -150,7 +150,7 @@ public class RepositorioOcorrencia implements InterfaceOcorrencia{
 
 	public Ocorrencia pesquisarOcorrenciaPorCodigo(String codigo) throws ClassNotFoundException, SQLException {
 		Connection con = Conexao.conectarBanco();
-		String sql = "select o.oc_numero,o.descricao,o.cd_solicitante,f.nome,o.idade " +
+		String sql = "select o.oc_numero,o.descricao,o.cd_solicitante,f.nome,o.idade, " +
 				"o.cd_status,so.status,o.cd_tipo,o.cd_equipamento,o.data_abertura " +
 				"from ocorrencias o " +
 				 "inner join usuarios u on o.cd_solicitante = u.codigo " +
