@@ -30,5 +30,11 @@ public class CadastroOcorrencia {
 	public Ocorrencia pesquisarOcorrenciaPorCodigo(String codigo) throws ClassNotFoundException, SQLException{
 		return interfaceOcorrencia.pesquisarOcorrenciaPorCodigo(codigo);
 	}
+	public Collection<Ocorrencia> pesquisarOcorrenciaPorSolicitante(String codigo) throws ClassNotFoundException, SQLException{
+		return interfaceOcorrencia.pesquisarOcorrenciaPorSolicitante(codigo);
+	}
+	public Collection<Ocorrencia> pesquisarOcorrenciaPorStatus(String codigo) throws ClassNotFoundException, SQLException{
+		return interfaceOcorrencia.pesquisarOcorrenciaPorStatus(codigo);
+	}
 	
 }

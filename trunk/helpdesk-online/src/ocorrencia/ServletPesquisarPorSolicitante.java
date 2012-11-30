@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ServletPesquisarTodasOcorrencias extends HttpServlet {
+public class ServletPesquisarPorSolicitante extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public ServletPesquisarTodasOcorrencias() {
+    public ServletPesquisarPorSolicitante() {
         super();
     }
 
@@ -25,7 +25,7 @@ public class ServletPesquisarTodasOcorrencias extends HttpServlet {
 		FachadaOcorrencia fachadaOcorrencia = new FachadaOcorrencia();
 		Collection<Ocorrencia> listaOcorrencias = new LinkedList<Ocorrencia>();
 		try {
-			listaOcorrencias = fachadaOcorrencia.listarTodasOcorrencias();
+			listaOcorrencias = fachadaOcorrencia.pesquisarOcorrenciaPorSolicitante(request.getParameter("cd_solicitante"));
 			request.getSession().setAttribute("listaOcorrencia", listaOcorrencias);
 			response.sendRedirect("ChamadosAbertos.jsp");
 		} catch (ClassNotFoundException e) {
@@ -33,7 +33,6 @@ public class ServletPesquisarTodasOcorrencias extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 }

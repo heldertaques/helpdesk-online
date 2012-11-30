@@ -38,5 +38,11 @@ public class FachadaOcorrencia {
 	public Ocorrencia pesquisarOcorrenciaPorCodigo(String codigo) throws ClassNotFoundException, SQLException{
 		return cadOcorrencia.pesquisarOcorrenciaPorCodigo(codigo);
 	}
+	public Collection<Ocorrencia> pesquisarOcorrenciaPorSolicitante(String codigo) throws ClassNotFoundException, SQLException{
+		return cadOcorrencia.pesquisarOcorrenciaPorSolicitante(codigo);
+	}
+	public Collection<Ocorrencia> pesquisarOcorrenciaPorStatus(String codigo) throws ClassNotFoundException, SQLException{
+		return cadOcorrencia.pesquisarOcorrenciaPorStatus(codigo);
+	}
 
 }
