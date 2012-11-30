@@ -240,4 +240,14 @@
     <servlet-name>EnviarEmail</servlet-name>
     <url-pattern>/EnviarEmail</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletPesquisarTodasOcorrencias</display-name>
+    <servlet-name>ServletPesquisarTodasOcorrencias</servlet-name>
+    <servlet-class>ocorrencia.ServletPesquisarTodasOcorrencias</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletPesquisarTodasOcorrencias</servlet-name>
+    <url-pattern>/ServletPesquisarTodasOcorrencias</url-pattern>
+  </servlet-mapping>
 </web-app>
