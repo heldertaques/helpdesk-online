@@ -242,12 +242,52 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ServletPesquisarTodasOcorrencias</display-name>
-    <servlet-name>ServletPesquisarTodasOcorrencias</servlet-name>
+    <display-name>PesquisarTodasOcorrencias</display-name>
+    <servlet-name>PesquisarTodasOcorrencias</servlet-name>
     <servlet-class>ocorrencia.ServletPesquisarTodasOcorrencias</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ServletPesquisarTodasOcorrencias</servlet-name>
-    <url-pattern>/ServletPesquisarTodasOcorrencias</url-pattern>
+    <servlet-name>PesquisarTodasOcorrencias</servlet-name>
+    <url-pattern>/PesquisarTodasOcorrencias</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PesquisarPorSolicitante</display-name>
+    <servlet-name>PesquisarPorSolicitante</servlet-name>
+    <servlet-class>ocorrencia.ServletPesquisarPorSolicitante</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PesquisarPorSolicitante</servlet-name>
+    <url-pattern>/PesquisarPorSolicitante</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PesquisarPorStatus</display-name>
+    <servlet-name>PesquisarPorStatus</servlet-name>
+    <servlet-class>ocorrencia.ServletPesquisarPorStatus</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PesquisarPorStatus</servlet-name>
+    <url-pattern>/PesquisarPorStatus</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListarStatusOcorrencia</display-name>
+    <servlet-name>ListarStatusOcorrencia</servlet-name>
+    <servlet-class>ocorrencia.status.ServletListarStatusOcorrencia</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListarStatusOcorrencia</servlet-name>
+    <url-pattern>/ListarStatusOcorrencia</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PesquisarPorCodigo</display-name>
+    <servlet-name>PesquisarPorCodigo</servlet-name>
+    <servlet-class>ocorrencia.ServletPesquisarPorCodigo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PesquisarPorCodigo</servlet-name>
+    <url-pattern>/PesquisarPorCodigo</url-pattern>
   </servlet-mapping>
 </web-app>

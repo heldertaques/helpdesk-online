@@ -2,18 +2,16 @@ package ocorrencia;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Collection;
-import java.util.LinkedList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ServletPesquisarTodasOcorrencias extends HttpServlet {
+public class ServletPesquisarPorCodigo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public ServletPesquisarTodasOcorrencias() {
+    public ServletPesquisarPorCodigo() {
         super();
     }
 
@@ -23,17 +21,15 @@ public class ServletPesquisarTodasOcorrencias extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		FachadaOcorrencia fachadaOcorrencia = new FachadaOcorrencia();
-		Collection<Ocorrencia> listaOcorrencias = new LinkedList<Ocorrencia>();
+		Ocorrencia ocorrencia = new Ocorrencia();
 		try {
-			listaOcorrencias = fachadaOcorrencia.listarTodasOcorrencias();
-			request.getSession().setAttribute("listaOcorrencia", listaOcorrencias);
-			response.sendRedirect("ChamadosAbertos.jsp");
+			ocorrencia = fachadaOcorrencia.pesquisarOcorrenciaPorCodigo(request.getParameter("oc_numero"));
+			request.getSession().setAttribute("ocorrencia", ocorrencia);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 }

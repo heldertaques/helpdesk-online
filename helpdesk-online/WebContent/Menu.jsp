@@ -5,9 +5,8 @@ Usuario Logado:<input type="text" style="font-size: 18;border: 0;
    <li><a href='Principal.jsp'><span>Home</span></a></li>
    <li class='has-sub '><a href='#'><span>Ocorrências</span></a>
       <ul>
-         <li><a href='#'><span>Inicio</span></a></li>
          <li><a href='CadastroOcorrencia.jsp'><span>Abrir Chamado</span></a></li>
-         <li><a href='#'><span>Consultar Chamado</span></a></li>
+         <li><a href='PesquisarTodasOcorrencias'><span>Consultar Chamado</span></a></li>
       </ul>
    </li>
    <li class='has-sub '><a href='#'><span>Cadastro</span></a>

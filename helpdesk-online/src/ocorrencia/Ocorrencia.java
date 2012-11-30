@@ -6,6 +6,7 @@ import java.util.Date;
 public class Ocorrencia {
 	private String oc_numero;
 	private String descricao;
+	private String info_fechamento;
 	private int cd_solicitante;
 	private String nomeSolicitante;
 	private int cd_responsavel;
@@ -29,6 +30,12 @@ public class Ocorrencia {
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+	public String getInfo_fechamento() {
+		return info_fechamento;
+	}
+	public void setInfo_fechamento(String info_fechamento) {
+		this.info_fechamento = info_fechamento;
 	}
 	public int getCd_solicitante() {
 		return cd_solicitante;
