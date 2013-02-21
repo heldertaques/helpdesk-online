@@ -36,5 +36,8 @@ public class CadastroOcorrencia {
 	public Collection<Ocorrencia> pesquisarOcorrenciaPorStatus(String codigo) throws ClassNotFoundException, SQLException{
 		return interfaceOcorrencia.pesquisarOcorrenciaPorStatus(codigo);
 	}
+	public void alterarOcorrencia(Ocorrencia ocorrencia) throws ClassNotFoundException, SQLException{
+		interfaceOcorrencia.alterarOcorrencia(ocorrencia);
+	}
 	
 }

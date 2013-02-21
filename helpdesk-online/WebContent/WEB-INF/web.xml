@@ -290,4 +290,14 @@
     <servlet-name>PesquisarPorCodigo</servlet-name>
     <url-pattern>/PesquisarPorCodigo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AlterarOcorrencia</display-name>
+    <servlet-name>AlterarOcorrencia</servlet-name>
+    <servlet-class>ocorrencia.ServletAlterarOcorrencia</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlterarOcorrencia</servlet-name>
+    <url-pattern>/AlterarOcorrencia</url-pattern>
+  </servlet-mapping>
 </web-app>

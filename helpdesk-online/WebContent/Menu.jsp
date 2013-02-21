@@ -25,12 +25,12 @@ Usuario Logado:<input type="text" style="font-size: 18;border: 0;
          <li><a href='ListaDeFuncionariosParaAlteracao'><span>Alterar Funcionários</span></a></li>
          <li><a href='PesquisarTodosUsuarios'><span>Alterar Usuário</span></a></li>
          <li><a href='ListarTipoOcorrencia'><span>Alterar Tipo de Ocorrência</span></a></li>
-         <li><a href='#'><span>Alterar Setor</span></a></li>
          <li><a href='ServletListarFuncionarios'><span>Listar os Funcionários</span></a></li>
+         <li style="visibility: hidden;"><a href='#'><span>Alterar Setor</span></a></li>
       </ul>
    </li>
    
-   <li class='has-sub '><a href='#'><span>Relatórios</span></a>
+   <li class='has-sub ' style="visibility: hidden;"><a href='#'><span>Relatórios</span></a>
       <ul>
          <li><a href='#'><span>Chamados por Usuario</span></a></li>
          <li><a href='#'><span>Chamados Atendidos no SLA</span></a></li>

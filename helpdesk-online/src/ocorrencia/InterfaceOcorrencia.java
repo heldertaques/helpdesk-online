@@ -6,6 +6,7 @@ import java.util.Collection;
 public interface InterfaceOcorrencia {
 	public Integer pegarNumeroOcorrencia() throws ClassNotFoundException, SQLException;
 	public void inserirOcorrencia(Ocorrencia ocorrencia) throws ClassNotFoundException, SQLException;
+	public void alterarOcorrencia(Ocorrencia ocorrencia)throws ClassNotFoundException, SQLException;
 	public Collection<Ocorrencia> listarTodasOcorrencias() throws ClassNotFoundException, SQLException;
 	public Collection<Ocorrencia> listarOcorrenciasNaoIniciadas(String status) throws ClassNotFoundException, SQLException;
 	public Collection<Ocorrencia> listarOcorrenciasPendentes(String status) throws ClassNotFoundException, SQLException;

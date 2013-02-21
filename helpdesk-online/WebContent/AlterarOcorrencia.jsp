@@ -41,7 +41,6 @@
 		}
 		var url = "PesquisarPorCodigo";
 		url = url + "?oc_num=" + "${param.oc_numero}";
-		alert(url);
 		xmlHttp.onreadystatechange = preencherCampos;
 		xmlHttp.open("GET", url, true);
 		xmlHttp.send(null);
@@ -65,8 +64,12 @@
 		  var selEqpto = document.getElementById("Eqpto");
 		  var selStatus = document.getElementById("Status");
 
-		  document.getElementById("num_ocorrencia").value = unescape(xml.getElementsByTagName('OcNum')[0].firstChild.data);
-		  while(iTpOcor != qtdTpOcor){
+		  document.getElementById("num_ocorrencia").value = unescape(xml.getElementsByTagName('oc_numero')[0].firstChild.data);
+		  document.getElementById("descricao").value = unescape(xml.getElementsByTagName('descricao')[0].firstChild.data);
+		  document.getElementById("solicitante").value = unescape(xml.getElementsByTagName('nome_solicitante')[0].firstChild.data);
+		  document.getElementById("TpOcor").value = unescape(xml.getElementsByTagName('nome_solicitante')[0].firstChild.data);
+		  
+		  /*while(iTpOcor != qtdTpOcor){
 			  selTpOcor.options[selTpOcor.options.length] = new Option(unescape(xml.getElementsByTagName('descTpOcor'+iTpOcor)[0].firstChild.data),
 			                             		unescape(xml.getElementsByTagName('codTpOcor'+iTpOcor)[0].firstChild.data));
 			  iTpOcor++;
@@ -76,7 +79,7 @@
                		unescape(xml.getElementsByTagName('codEqpto'+iEqpto)[0].firstChild.data));
 			 
 			  iEqpto++;
-		  }
+		  }*/
 		  while(iStatus != qtdStatus){
 			  selStatus.options[selStatus.options.length] = new Option(unescape(xml.getElementsByTagName('descStatus'+iStatus)[0].firstChild.data),
                		unescape(xml.getElementsByTagName('codStatus'+iStatus)[0].firstChild.data));
@@ -94,7 +97,7 @@
 </head>
 <body onload="pesquisarDados()">
 <h1>Abertura de Chamado</h1>
-<form action="CadastroOcorrencia" method="post">
+<form action="AlterarOcorrencia" method="post">
 <table  border="2" bordercolor="blue" width="800">
 <tr>
 <td>
@@ -109,7 +112,7 @@ Nº do Chamado: <input type="text" readonly="readonly" name="num_ocorrencia" id="
 Solicitado por: <input type="text" readonly="readonly" size="38" name="solicitante" id="solicitante">
 </td>
 <td>
-Setor: <input type="text" readonly="readonly" size="38">
+<input type="text" style="visibility: hidden;" readonly="readonly" size="38">
 </td>
 
 </tr>
@@ -118,13 +121,22 @@ Setor: <input type="text" readonly="readonly" size="38">
 <table>
 <tr>
 <td>
-Tipo de Ocorência: <select style="max-width: 200px" name="TpOcor" id="TpOcor"></select>
+Status: <br><select style="width: 110px;" name="Status" id="Status"></select>
 </td>
 <td>
-&nbsp;&nbsp;&nbsp;&nbsp;Equipamento: <select style="max-width: 180px" name="Eqpto" id="Eqpto"></select>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" style="max-width: 180px;visibility:hidden;" name="data_fechamento" id="data_fechamento">
 </td>
 <td>
-&nbsp;&nbsp;&nbsp;&nbsp;Status: <select disabled="disabled" style="width: 110px;" name="Status" id="Status"></select>
+<input type="text" style="max-width: 200px;visibility: hidden;" name="TpOcor" id="TpOcor">
 </td>
 </tr>
 </table>
@@ -139,9 +151,9 @@ Informações de Fechamento:
 </tr>
 <tr>
 <td>
-<textarea rows="10" cols="45" name="descricao" id="descricao" disabled="disabled"></textarea>
+<textarea rows="10" cols="45" name="descricao" id="descricao" readonly="readonly""></textarea>
 </td>
-<td><textarea rows="10" cols="45" name="descricao" id="descricao"></textarea></td>
+<td><textarea rows="10" cols="45" name="info_chamado" id="info_chamado"></textarea></td>
 </tr>
 </table>
 </td>
@@ -155,6 +167,7 @@ Informações de Fechamento:
 </tr>
 </table>
 <input type="hidden" name="cdsolicitante" id="cdsolicitante" value="${logado.codigo}">
+<input type="hidden" name="cdresponsalvel" id="cdresponsalvel" value="${logado.codigo}">
 <input type="text" style="visibility: hidden;" value="${logado.email}" name="email" id="email">
 <select style="width: 110px;visibility: hidden;" name="StatusOcorr" id="StatusOcorr">
 	<option value="1"></option>
