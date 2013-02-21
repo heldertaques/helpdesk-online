@@ -16,7 +16,7 @@ public class Ocorrencia {
 	private int cd_status;
 	private String status;
 	private Date data_abertura;
-	private Date data_fechamento;
+	private String data_fechamento;
 	private Time idade;
 	
 	public String getOc_numero() {
@@ -91,10 +91,10 @@ public class Ocorrencia {
 	public void setData_abertura(Date data_abertura) {
 		this.data_abertura = data_abertura;
 	}
-	public Date getData_fechamento() {
+	public String getData_fechamento() {
 		return data_fechamento;
 	}
-	public void setData_fechamento(Date data_fechamento) {
+	public void setData_fechamento(String data_fechamento) {
 		this.data_fechamento = data_fechamento;
 	}
 	public Time getIdade() {

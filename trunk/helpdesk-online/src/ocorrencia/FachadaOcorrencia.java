@@ -20,6 +20,15 @@ public class FachadaOcorrencia {
 		ocorrencia.setCd_status(Integer.parseInt(status));
 		cadOcorrencia.inserirOcorrencia(ocorrencia);
 	}
+	public void alterarOcorrencia(String oc_numero, String cd_responsavel, String cd_status, String info_fechamento, String data_fechamento ) throws ClassNotFoundException, SQLException{
+		Ocorrencia ocorrencia = new Ocorrencia();
+		ocorrencia.setOc_numero(oc_numero);
+		ocorrencia.setCd_responsavel(Integer.parseInt(cd_responsavel));
+		ocorrencia.setCd_status(Integer.parseInt(cd_status));
+		ocorrencia.setData_fechamento(data_fechamento);
+		ocorrencia.setInfo_fechamento(info_fechamento);
+		cadOcorrencia.alterarOcorrencia(ocorrencia);
+	}
 	public Collection<Ocorrencia> listarTodasOcorrencias() throws ClassNotFoundException, SQLException{
 		return cadOcorrencia.listarTodasOcorrencias();
 	}

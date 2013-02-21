@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.LinkedList;
 
@@ -226,6 +227,19 @@ public class RepositorioOcorrencia implements InterfaceOcorrencia{
 			listaOcorrencias.add(ocorrencia);
 		}
 		return listaOcorrencias;
+	}
+
+	public void alterarOcorrencia(Ocorrencia ocorrencia)
+			throws ClassNotFoundException, SQLException {
+		Connection con = Conexao.conectarBanco();
+		String sql = "update ocorrencias set cd_responsavel = ?, cd_status = ?, info_fechamento = ? where oc_numero = ?";
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, ocorrencia.getCd_responsavel());
+		pstmt.setInt(2, ocorrencia.getCd_status());
+		pstmt.setString(3, ocorrencia.getInfo_fechamento());
+		//pstmt.setTimestamp(4, Timestamp.valueOf(ocorrencia.getData_fechamento()));
+		pstmt.setString(4, ocorrencia.getOc_numero());
+		pstmt.executeUpdate();
 	}
 
 }
